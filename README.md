@@ -9,7 +9,7 @@ Repositório para o trabalho da disciplina de Programação WEB - Universidade F
 O projeto "SIGAA de Araque" tem como objetivo a implementação de um sistema WEB para o gerenciamento de atividades relacionadas a um docente/pesquisador. Com sua utilização será possível a gestão de alunos, projetos de pesquisa, aulas lecionadas, grupos de pesquisa e publicações referentes a um professor.
 
 ### Tecnologia
-- Backend: Como tecnologia empregada no backend do sistema, será utilizado o Sping Boot, framework open source para a plataforma Java. A escolha da plataforma foi baseada na necessidade de se encontrar um conhecimento de programação comum aos desenvolvedores backend, e que, portanto, aprimore a eficiência de trabalho. Nesse contexto, a escolha do Sping Boot é fortemente baseada na definição da plataforma, além das vantagens de diminuir o tempo de desenvolvimento, facilitar testes de unidade e integração, e dispor de uma comunidade ativa, encontrando, facilmente, diversos materiais de apoio.
+- Backend: Como tecnologia empregada no backend do sistema, será utilizado o Spring Boot, framework open source para a plataforma Java. A escolha da plataforma foi baseada na necessidade de se encontrar um conhecimento de programação comum aos desenvolvedores backend, e que, portanto, aprimore a eficiência de trabalho. Nesse contexto, a escolha do Spring Boot é fortemente baseada na definição da plataforma, além das vantagens de diminuir o tempo de desenvolvimento, facilitar testes de unidade e integração, e dispor de uma comunidade ativa, encontrando, facilmente, diversos materiais de apoio.
 
 
 ### Padronização do projeto
