@@ -22,7 +22,7 @@ Serão apresentadas conjuntos de regras de desenvolvimento de forma a facilitar 
 #### Commits
   Objetivando garantir rastreabilidade bidirecional entre commits e ítens do backlog do produto, é apresentada uma padronização da mensagem de commit, na qual:
 - Uma mensagem de commit deve se iniciar por uma sentença que traga, objetivamente, a função do commit em questão.
-- Uma mensagem de commit sempre deve indicar a **issue** a qual se relaciona, contendo em sua corpo um # ligado ao número da issue, essa indicação ocorre separada de vírgula da sentença inicial.
+- Uma mensagem de commit sempre deve indicar a **issue** a qual se relaciona, contendo em seu corpo um # ligado ao número da issue, essa indicação ocorre separada de vírgula da sentença inicial.
 - Em caso de finalização total da terfa contida em uma issue, uma mensagem de commit deve utilizar a plavra chave **close** seguida do # e o número da issue.
 - Nesse contexto, uma mensagem de commit pode ser apresentada da seguinte forma:
   1. Para tarefas totalmentes finalizadas
