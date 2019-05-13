@@ -2,6 +2,7 @@ package br.com.sgp.entities;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Objects;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -31,13 +32,20 @@ public abstract class Researcher implements Serializable {
 	@ManyToMany
 	@JoinTable(name = "RESEARCHER_PROJECT",
 	joinColumns = @JoinColumn(name = "researcher_id"),
-	inverseJoinColumns = @JoinColumn(name = "project_id")
-	)
+	inverseJoinColumns = @JoinColumn(name = "project_id"))
 	private List<Project> projects;
 	
+	@ManyToMany
+	@JoinTable(name = "RESEARCHER_RESEARCHGROUP",
+	joinColumns = @JoinColumn(name = "researcher_id"),
+	inverseJoinColumns = @JoinColumn(name = "researchGroup_id"))
+	private List<ResearchGroup> researchGroups;
 	
-	private ResearchGroup group;
-	
+	@ManyToMany
+	@JoinTable(name = "RESEARCHER_PUBLICATION",
+	joinColumns = @JoinColumn(name = "researcher_id"),
+	inverseJoinColumns = @JoinColumn(name = "publication_id"))
+	private List<ResearchGroup> publications;
 
 	public Researcher() {
 	}
@@ -109,15 +117,33 @@ public abstract class Researcher implements Serializable {
 		this.email = email;
 	}
 
+	public List<Project> getProjects() {
+		return projects;
+	}
+
+	public void setProjects(List<Project> projects) {
+		this.projects = projects;
+	}
+
+	public List<ResearchGroup> getResearchGroups() {
+		return researchGroups;
+	}
+
+	public void setResearchGroups(List<ResearchGroup> researchGroups) {
+		this.researchGroups = researchGroups;
+	}
+
+	public List<ResearchGroup> getPublications() {
+		return publications;
+	}
+
+	public void setPublications(List<ResearchGroup> publications) {
+		this.publications = publications;
+	}
+
 	@Override
 	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((cpf == null) ? 0 : cpf.hashCode());
-		result = prime * result + ((email == null) ? 0 : email.hashCode());
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		result = prime * result + ((rg == null) ? 0 : rg.hashCode());
-		return result;
+		return Objects.hash(getCpf(), getEmail(), getId(), getRg());
 	}
 
 	@Override
