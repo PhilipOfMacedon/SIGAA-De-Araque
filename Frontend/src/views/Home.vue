@@ -1,6 +1,6 @@
 <template>
     <div class="home">
-      <h1 class="red--text text--darken-2">O começo é aqui</h1>
+      <h1 class="red--text text--darken-2">PLACEHOLDER</h1>
     </div>
 </template>
 
