@@ -2,6 +2,9 @@ package br.com.sgp.entities;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Student extends Researcher {
 	private String courseName;
 	private Date courseStart;
