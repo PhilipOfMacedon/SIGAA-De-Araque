@@ -25,7 +25,9 @@
           </v-list-tile-content>
         </v-list-tile>
       </v-list>
+
       <v-divider light class="secondary"></v-divider>
+
       <v-list>
         <v-list-tile v-for="link in links" :key="link.text" router :to="link.route">
           <v-list-tile-action>
@@ -43,7 +45,6 @@
             </v-list-tile>
           </template>
 
-  
           <v-list-tile
             v-for="userConfig in userConfigs"
             :key="userConfig.text"
@@ -54,11 +55,9 @@
               <v-icon small class="white--text">{{userConfig.icon}}</v-icon>
             </v-list-tile-action>
             <v-list-tile-content>
-            <v-list-tile-title small class="white--text">{{userConfig.text}}</v-list-tile-title>
+              <v-list-tile-title small class="white--text">{{userConfig.text}}</v-list-tile-title>
             </v-list-tile-content>
           </v-list-tile>
-         
-
         </v-list-group>
       </v-list>
     </v-navigation-drawer>
@@ -72,12 +71,12 @@ export default {
     return {
       drawer: false,
       links: [
-        { icon: "dashboard", text: "Home", route: "/" },
-        { icon: "folder", text: "Projetos", route: "/projects" },
-        { icon: "assignment_ind", text: "Pesquisadores", route: "/projects" },
-        { icon: "fa-tasks", text: "Disciplinas", route: "/projects" },
-        { icon: "people", text: "Grupo de pesquisa", route: "/team" },
-        { icon: "fa-copy", text: "Publicações", route: "/team" }
+        { icon: "home", text: "Home", route: "/" },
+        { icon: "folder", text: "Projetos", route: "/projetos" },
+        { icon: "assignment_ind", text: "Pesquisadores", route: "/" },
+        { icon: "fa-tasks", text: "Disciplinas", route: "/" },
+        { icon: "people", text: "Grupo de pesquisa", route: "/" },
+        { icon: "fa-copy", text: "Publicações", route: "/" }
       ],
       userConfigs: [
         { icon: "fa-edit", text: "Editar pefil", route: "/" },
