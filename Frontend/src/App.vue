@@ -1,5 +1,5 @@
 <template>
-  <v-app class="grey lighten-4">
+  <v-app id="theme">
     <Navbar/>
     <v-content class="mx-4 mt-4">
       <router-view></router-view>
@@ -10,7 +10,6 @@
 
 <script>
 import Navbar from '@/components/Navbar'
-
 export default {
   name: 'App',
   components: {Navbar},
@@ -21,3 +20,9 @@ export default {
   }
 }
 </script>
+
+<style>
+#theme {
+  background-image: linear-gradient(45deg,#DAE7F0,#FADAE7);
+}
+</style>
