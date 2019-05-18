@@ -1,7 +1,7 @@
 <template>
   <v-app id="theme">
-    <Navbar/>
     <v-content class="mx-4 mt-4">
+      <Navbar v-if='this.$route.path !== "/"'></Navbar>
       <router-view></router-view>
     </v-content>
 
@@ -9,15 +9,16 @@
 </template>
 
 <script>
-import Navbar from '@/components/Navbar'
+import Navbar from '@/components/Navbar.vue'
+
 export default {
   name: 'App',
-  components: {Navbar},
   data () {
     return {
       //
     }
-  }
+  },
+  components: {Navbar},
 }
 </script>
 
