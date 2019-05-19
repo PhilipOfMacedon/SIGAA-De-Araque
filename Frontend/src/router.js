@@ -1,7 +1,8 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import Home from './views/Home.vue'
-import Projetos from './views/Projetos'
+import Vue from 'vue';
+import Router from 'vue-router';
+import Home from './views/Home.vue';
+import Projects from './views/Projects';
+import ProfileEdit from './views/ProfileEdit';
 
 Vue.use(Router)
 
@@ -15,9 +16,14 @@ export default new Router({
       component: Home
     },
     {
-      path: '/projetos',
-      name: 'projectos',
-      component: Projetos,
+      path: '/projects',
+      name: 'projects',
+      component: Projects,
+    },
+    {
+      path: '/profile/edit',
+      name: 'profileEdit',
+      component: ProfileEdit,
     }
   ]
 })

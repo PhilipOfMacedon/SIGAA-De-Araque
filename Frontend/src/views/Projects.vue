@@ -1,5 +1,5 @@
 <template>
-  <div class="projetos">
+  <div class="projects">
     <h1 class="font-weight-regular grey--text text-md-center">Projetos</h1>
     <!-- <v-container class="grey -ligthen-4" fill-height fluid>
       <v-layout row wrap justify-center>
@@ -46,7 +46,7 @@
                         <v-chip color="orange" text-color="white">Categoria</v-chip>
                         <div>{{project.category}}</div>
                       </div>
-                      <v-chip color="grey darken-1">Alunos</v-chip>
+                      <v-chip color="grey darken-1 white--text">Alunos</v-chip>
                       <div v-for="aluno in project.alunos" :key="aluno">{{aluno}}</div>
                     </v-card-text>
                     <v-flex sm12 class="text-md-center">
