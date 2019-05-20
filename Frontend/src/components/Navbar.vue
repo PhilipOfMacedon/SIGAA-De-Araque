@@ -7,7 +7,7 @@
         <span class="secondary--text">DeAraque</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-btn flat color="red">
+      <v-btn flat color="red" :to="homepage">
         <span>Sair</span>
         <v-icon right>exit_to_app</v-icon>
       </v-btn>
@@ -70,6 +70,7 @@ export default {
   data() {
     return {
       drawer: false,
+      homepage: "/",
       links: [
         { icon: "home", text: "Home", route: "/home" },
         { icon: "folder", text: "Projetos", route: "/projetos" },

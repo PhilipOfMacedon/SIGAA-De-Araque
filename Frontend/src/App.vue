@@ -1,6 +1,6 @@
 <template>
   <v-app id="theme">
-    <v-content class="mx-4 mt-4">
+    <v-content class="mx-4 mt-2">
       <Navbar v-if='this.$route.path !== "/"'></Navbar>
       <router-view></router-view>
     </v-content>
@@ -24,6 +24,6 @@ export default {
 
 <style>
 #theme {
-  background-image: linear-gradient(45deg,#DAE7F0,#FADAE7);
+  background-image: linear-gradient(45deg,#96b9ff,#ff96f7);
 }
 </style>

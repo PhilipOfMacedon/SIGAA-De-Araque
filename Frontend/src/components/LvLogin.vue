@@ -3,7 +3,9 @@
 		<v-layout row>
 			<v-flex text-xs-center xs12 md12>
 				<v-toolbar-title>
-					Login
+					<h3 class="display-1 font-weight-light grey--text text-sm-center">
+						Login
+					</h3>
 				</v-toolbar-title>
 			</v-flex>
 		</v-layout>
@@ -37,7 +39,7 @@
 	</v-layout>
 	<v-layout row>
 		<v-flex text-xs-center xs12 md12>
-			<v-btn color="info" :to="route">
+			<v-btn color="primary" :to="route">
 				Login
 			</v-btn>
 		</v-flex>
@@ -51,7 +53,7 @@ export default{
 	name: 'LvLogin',
 	data() {
 		return {
-			status: 'Login',
+			title: 'Login',
 			user: {
 				email: '',
 				password: ''
