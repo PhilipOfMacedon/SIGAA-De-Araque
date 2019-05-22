@@ -71,8 +71,8 @@ export default {
     return {
       drawer: false,
       links: [
-        { icon: "home", text: "Home", route: "/" },
-        { icon: "folder", text: "Projetos", route: "/projects" },
+        { icon: "home", text: "Home", route: "/home" },
+        { icon: "folder", text: "Projetos", route: "/projetos" },
         { icon: "assignment_ind", text: "Pesquisadores", route: "/" },
         { icon: "fa-tasks", text: "Disciplinas", route: "/" },
         { icon: "people", text: "Grupo de pesquisa", route: "/" },
