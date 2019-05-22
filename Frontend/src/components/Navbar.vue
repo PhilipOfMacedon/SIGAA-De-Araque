@@ -38,7 +38,7 @@
           </v-list-tile-content>
         </v-list-tile>
 
-        <v-list-group prepend-icon="account_circle" value="false" no-action>
+        <v-list-group prepend-icon="account_circle" no-action>
           <template v-slot:activator>
             <v-list-tile>
               <v-list-tile-title>Perfil</v-list-tile-title>

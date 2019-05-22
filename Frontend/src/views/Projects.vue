@@ -56,6 +56,12 @@
                 </v-expansion-panel-content>
               </v-expansion-panel>
             </v-layout>
+            <v-layout row justify-center>
+              <v-btn large color="info" @click.stop="openDialog">
+                <v-icon left>add_circle</v-icon> Adicionar projeto
+              </v-btn>
+              <CreateProject v-if="addNewProject" v-model="addNewProject"/>
+            </v-layout>
           </v-card>
         </v-flex>
       </v-layout>
@@ -64,10 +70,15 @@
 </template>
 
 <script>
+import CreateProject from "@/components/projects/CreateProject";
 export default {
+  components: {
+    CreateProject: CreateProject
+  },
   data() {
     return {
       search: "",
+      addNewProject: false,
       projects: [
         {
           name: "Projeto1",
@@ -90,6 +101,11 @@ export default {
         let projectName = project.name.toUpperCase();
         return projectName.match(this.search.toUpperCase());
       });
+    }
+  },
+  methods: {
+    openDialog() {
+      this.addNewProject = true;
     }
   }
 };
