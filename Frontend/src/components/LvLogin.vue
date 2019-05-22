@@ -3,7 +3,7 @@
 		<v-layout row>
 			<v-flex text-xs-center xs12 md12>
 				<v-toolbar-title>
-					<h3 class="display-1 font-weight-light grey--text text-sm-center">
+					<h3 class="display-1 font-weight-light grey--text text--darken-1 text-sm-center">
 						Login
 					</h3>
 				</v-toolbar-title>

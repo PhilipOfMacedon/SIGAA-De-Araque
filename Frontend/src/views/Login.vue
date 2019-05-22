@@ -4,7 +4,7 @@
 			<v-layout row>
 				<v-flex text-xs-center xs12 md12>
 					<v-toolbar-title>
-						<h2 class="display-2 font-weight-light black--text text-sm-center">{{ title }}</h2>
+						<h2 class="display-2 font-weight-light blue-grey--text text--darken-4 text-sm-center">{{ title }}</h2>
 					</v-toolbar-title>
 				</v-flex>
 			</v-layout>

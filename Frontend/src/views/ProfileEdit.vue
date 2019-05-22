@@ -13,7 +13,7 @@
                   <v-flex sx12>
                     <v-btn bottom color="primary">
                       <v-icon>edit</v-icon>
-                      <span>Alterar Imagem</span>
+                      <span class="white--text">Alterar Imagem</span>
                     </v-btn>
                   </v-flex>
                 </v-layout>

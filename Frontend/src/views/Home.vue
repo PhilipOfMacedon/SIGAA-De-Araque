@@ -1,8 +1,8 @@
 <template>
   <div class="home">
-    <h1 class="display-1 font-weight-light grey--text text-sm-center">Home</h1>
+    <h1 class="display-1 font-weight-light blue-grey--text text--darken-4 text-sm-center pt-1">Home</h1>
 
-    <v-container fluid class="my-5 mx-2" align-center>
+    <v-container fluid class="my-4 mx-2" align-center>
       <!-- <v-layout row wrap>
         <v-flex xs12 md6>
           <v-btn outline block class="primary">1</v-btn>
