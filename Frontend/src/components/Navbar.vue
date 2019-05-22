@@ -73,7 +73,7 @@ export default {
       homepage: "/",
       links: [
         { icon: "home", text: "Home", route: "/home" },
-        { icon: "folder", text: "Projetos", route: "/projetos" },
+        { icon: "folder", text: "Projetos", route: "/projects" },
         { icon: "assignment_ind", text: "Pesquisadores", route: "/" },
         { icon: "fa-tasks", text: "Disciplinas", route: "/" },
         { icon: "people", text: "Grupo de pesquisa", route: "/" },
