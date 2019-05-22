@@ -1,6 +1,6 @@
 <template>
   <div class="projects">
-    <h1 class="font-weight-regular grey--text text-md-center">Projetos</h1>
+    <h1 class="font-weight-regular blue-grey--text text--darken-4 text-md-center">Projetos</h1>
     <!-- <v-container class="grey -ligthen-4" fill-height fluid>
       <v-layout row wrap justify-center>
         <v-flex xs12 sm12 md6 class="my-3 text-md-center">
