@@ -72,14 +72,14 @@ export default {
       drawer: false,
       links: [
         { icon: "home", text: "Home", route: "/" },
-        { icon: "folder", text: "Projetos", route: "/projetos" },
+        { icon: "folder", text: "Projetos", route: "/projects" },
         { icon: "assignment_ind", text: "Pesquisadores", route: "/" },
         { icon: "fa-tasks", text: "Disciplinas", route: "/" },
         { icon: "people", text: "Grupo de pesquisa", route: "/" },
         { icon: "fa-copy", text: "Publicações", route: "/" }
       ],
       userConfigs: [
-        { icon: "fa-edit", text: "Editar pefil", route: "/" },
+        { icon: "fa-edit", text: "Editar pefil", route: "/profile/edit" },
         { icon: "settings", text: "Configurações", route: "/projects" }
       ]
     };

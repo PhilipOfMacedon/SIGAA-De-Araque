@@ -55,7 +55,7 @@ export default {
     return {
       //Last login in milliseconds
       user: { username: "Rilipe Fodrigues", lastLogin: 1558037257662 },
-      buttons: [{name: "Projetos", route: "/projetos"},
+      buttons: [{name: "Projetos", route: "/projects"},
                 {name: "Grupos de Pesquisa", route: ""},
                 {name: "Pesquisadores", route: ""},
                 {name: "Disciplinas", route: ""},
