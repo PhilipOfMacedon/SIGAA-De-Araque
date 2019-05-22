@@ -3,7 +3,9 @@
 		<v-layout row>
 			<v-flex text-xs-center xs12 md12>
 				<v-toolbar-title>
-					Cadastre-se
+					<h3 class="display-1 font-weight-light grey--text text-sm-center">
+						Cadastre-se
+					</h3>
 				</v-toolbar-title>
 			</v-flex>
 		</v-layout>
@@ -14,38 +16,42 @@
 			<v-layout row>
 				<v-flex xs7>
 					<v-text-field label="Nome"
-					v-model="user.name">
+					v-model="user.name"
+					:rules="[rules.required]">
 				</v-text-field>
 			</v-flex>
 			<v-flex xs1></v-flex>
 			<v-flex xs4>
 				<v-text-field label="Sobrenome"
-				v-model="user.lastname">
+				v-model="user.lastname"
+				:rules="[rules.required]">
 			</v-text-field>
 		</v-flex>
 	</v-layout>
 	<v-layout row>
 		<v-flex xs6>
 			<v-text-field label="Cpf"
-			v-model="user.cpf">
+			v-model="user.cpf"
+			:rules="[rules.required]">
 		</v-text-field>
 	</v-flex>
 	<v-flex xs1></v-flex>
 	<v-flex xs5>
 		<v-text-field label="Rg"
-		v-model="user.rg">
+		v-model="user.rg"
+		:rules="[rules.required]">
 	</v-text-field>
 </v-flex>
 </v-layout>
 <v-layout row>
-	<v-flex xs12>
+	<v-flex xs6>
 		<v-text-field label="Telefone"
-		v-model="user.telephone">
+		v-model="user.telephone"
+		:rules="[rules.required]">
 	</v-text-field>
 </v-flex>
-</v-layout>
-<v-layout row>
-	<v-flex xs12 md12>
+<v-flex xs1></v-flex>
+	<v-flex xs5>
 		<v-text-field
 		v-model="user.email"
 		:rules="[rules.required, rules.email]"
@@ -83,7 +89,7 @@
 </v-layout>
 <v-layout row>
 	<v-flex text-xs-center xs12 md12>
-		<v-btn color="info">
+		<v-btn color="primary" @click="register">
 			Cadastrar
 		</v-btn>
 	</v-flex>
@@ -105,7 +111,8 @@ export default{
 				telephone: '',
 				email: '',
 				password: '',
-				password2: ''
+				password2: '',
+				registered: true,
 			},
 			show: false,
 			rules: {
@@ -117,11 +124,12 @@ export default{
 				},
 				min: v => v.length >= 8 || 'Mínimo 8 caracteres',
 			},
-			route: "/",
 		}
 	},
 	methods: {
-
+		register (){
+			this.$emit('registered');
+		}
 	},
 	components: {
 	}
@@ -129,10 +137,4 @@ export default{
 </script>
 
 <style>
-.borda {
-	border: 1px solid red;
-}
-span {
-	color: blue;
-}
 </style>

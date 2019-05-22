@@ -4,12 +4,12 @@
 			<v-layout row>
 				<v-flex text-xs-center xs12 md12>
 					<v-toolbar-title>
-						<h2>{{ title }}</h2>
+						<h2 class="display-2 font-weight-light black--text text-sm-center">{{ title }}</h2>
 					</v-toolbar-title>
 				</v-flex>
 			</v-layout>
 			<v-card
-			class="mx-auto mt-3 pt-4 pb-2 black--text card-principal"
+			class="mx-auto mt-5 pt-4 pb-2 black--text card-principal"
 			color="white lighten-1"
 			elevation=12
 			>
@@ -29,14 +29,14 @@
 					<v-btn flat color="primary" @click="dialogPass = !dialogPass">Esqueci a senha</v-btn>
 				</v-flex>
 			</v-layout>
-			<v-dialog v-model="dialogPass" max-width="400px">
+			<!-- <v-dialog v-model="dialogPass" max-width="400px">
 				<v-card class="mx-auto pt-4 pb-2 black--text card-pass" color="white lighten-1" elevation=12>
-					<h3>Se fudeu kkkk</h3>
+					<h3>Implementar</h3>
 				</v-card>
-			</v-dialog>
+			</v-dialog> -->
 			<v-dialog v-model="dialogRegister" max-width="600px">
-				<v-card class="mx-auto pt-4 pb-2 black--tex card-register" color="white lighten-1" elevation=12>
-					<LvRegister />
+				<v-card class="mx-auto px-3 pt-4 pb-3 black--tex card-register" color="white lighten-1" elevation=12>
+					<LvRegister v-on:registered="close"/>
 				</v-card>
 			</v-dialog>
 		</v-card>
@@ -54,6 +54,11 @@ export default{
 			title: "Bem vindo(a) ao SIGAA de Araque",
 			dialogPass: false,
 			dialogRegister: false,
+		}
+	},
+	methods: {
+		close (){
+			this.dialogRegister = false
 		}
 	},
 	components: {LvLogin, LvRegister},

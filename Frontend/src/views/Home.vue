@@ -38,7 +38,7 @@
               <v-layout row class="pt-3 pl-3" justify-center wrap >
                 <v-flex md4 class="text-xs-center" v-for="button in buttons" :key="button.name">
                   <v-btn flat round class="primary" :to="button.route">{{button.name}}</v-btn>
-                </v-flex> 
+                </v-flex>
               </v-layout>
             </v-container>
           </v-card>
