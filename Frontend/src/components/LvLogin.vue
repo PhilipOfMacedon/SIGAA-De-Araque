@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="login">
 		<v-layout row>
 			<v-flex text-xs-center xs12 md12>
 				<v-toolbar-title>
@@ -82,7 +82,7 @@ export default{
 .borda {
 	border: 1px solid red;
 }
-span {
+span .login {
 	color: blue;
 }
 </style>

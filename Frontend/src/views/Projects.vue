@@ -32,7 +32,7 @@
             </v-layout>
             <v-layout wrap justify-center class="grey lighten-1">
               <v-expansion-panel>
-                <v-expansion-panel-content v-for="project in filteredBlogs" :key="project.name">
+                <v-expansion-panel-content v-for="project in filteredProjects" :key="project.name">
                   <template v-slot:header>
                     <div class="font-weight-bold">{{project.name}}</div>
                   </template>
@@ -46,7 +46,7 @@
                         <v-chip color="orange" text-color="white">Categoria</v-chip>
                         <div>{{project.category}}</div>
                       </div>
-                      <v-chip color="grey darken-1 white--text">Alunos</v-chip>
+                      <v-chip color="grey darken-1" text-color="white">Alunos</v-chip>
                       <div v-for="aluno in project.alunos" :key="aluno">{{aluno}}</div>
                     </v-card-text>
                     <v-flex sm12 class="text-md-center">
@@ -96,7 +96,7 @@ export default {
     };
   },
   computed: {
-    filteredBlogs: function() {
+    filteredProjects: function() {
       return this.projects.filter(project => {
         let projectName = project.name.toUpperCase();
         return projectName.match(this.search.toUpperCase());
