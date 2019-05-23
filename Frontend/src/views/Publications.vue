@@ -29,7 +29,7 @@
               </v-flex>
             </v-layout>
             <v-layout wrap justify-center class="grey lighten-1">
-              <v-expansion-panel>
+              <v-expansion-panel expand="true">
                 <v-expansion-panel-content
                   v-for="publication in filteredPublications"
                   :key="publication.name"
