@@ -57,7 +57,7 @@ export default {
       buttons: [{name: "Projetos", route: "/projects"},
                 {name: "Grupos de Pesquisa", route: ""},
                 {name: "Pesquisadores", route: ""},
-                {name: "Disciplinas", route: ""},
+                {name: "Disciplinas", route: "/disciplines"},
                 {name: "Publicações", route: ""},
                 {name: "Perfil", route: ""}]
     };
