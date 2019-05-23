@@ -2,6 +2,7 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import Home from './views/Home.vue';
 import Projects from './views/Projects';
+import Publications from './views/Publications';
 import ProfileEdit from './views/ProfileEdit';
 import Login from './views/Login'
 
@@ -25,6 +26,11 @@ export default new Router({
       path: '/projects',
       name: 'projects',
       component: Projects,
+    }, 
+    {
+      path: '/publications',
+      name: 'publications',
+      component: Publications,
     },
     {
       path: '/profile/edit',

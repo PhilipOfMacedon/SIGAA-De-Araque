@@ -77,7 +77,7 @@ export default {
         { icon: "assignment_ind", text: "Pesquisadores", route: "/" },
         { icon: "fa-tasks", text: "Disciplinas", route: "/" },
         { icon: "people", text: "Grupo de pesquisa", route: "/" },
-        { icon: "fa-copy", text: "Publicações", route: "/" }
+        { icon: "fa-copy", text: "Publicações", route: "/publications" }
       ],
       userConfigs: [
         { icon: "fa-edit", text: "Editar pefil", route: "/profile/edit" },
