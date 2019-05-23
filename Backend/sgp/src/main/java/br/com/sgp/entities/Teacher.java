@@ -1,4 +1,4 @@
-package br.com.sgp.entities;
+package com.sgp.entities;
 
 import java.util.List;
 
@@ -13,7 +13,7 @@ public class Teacher extends Researcher implements LoggableUser {
 	private String password;
 	
 	@JsonBackReference
-	@OneToMany(mappedBy = "teacher")
+	@OneToMany(mappedBy = "teather")
 	private List<Subject> subjects;
 
 	public Teacher() {
@@ -21,7 +21,7 @@ public class Teacher extends Researcher implements LoggableUser {
 	}
 
 	public Teacher(Integer id, String name, String surname, String cpf, String rg, String phone, String email, String password, String bio) {
-		super(id, name, surname, cpf, rg, phone, email);
+		super(id, name, surname, rg, cpf, phone, email);
 		this.password = password;
 		this.bio = bio;
 	}
