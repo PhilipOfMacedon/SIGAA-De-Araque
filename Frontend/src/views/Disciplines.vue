@@ -1,20 +1,34 @@
 <template>
-  <div class="disciplines">
-    <h1 id="title" class="font-weight-regular blue-grey--text text--darken-4 text-md-center">Disciplinas</h1>
-  
-    <v-toolbar dense class="search-bar">
-        <v-text-field hide-details prepend-icon="search" 
-            single-line placeholder="Nome da disciplina"
-            v-model="searchStr"
-        >
-        </v-text-field>
-    </v-toolbar>
-    
-    <ul>
-        <li v-for="d in filteredDisciplines" :key="d.name"><a>{{ d.name }}</a></li>
-    </ul>
-
-  </div>
+<div class="disciplines">
+    <v-container fluid class="lighten-3 secondary">
+        <h1 class="font-weight-regular blue-grey--text text--darken-4 ml-3">Disciplinas</h1>
+        <v-card flat>
+            <v-layout wrap justify-center class="lighten-3 secondary">
+                <v-flex xs6 sm6 class="pt-4">
+                <v-text-field
+                    outline
+                    placeholder="nome da disciplina"
+                    append-icon="search"
+                    v-model="searchStr"
+                ></v-text-field>
+                </v-flex>
+            </v-layout>
+            <v-layout wrap justify-center class="grey lighten-1">
+                <v-expansion-panel>
+                <v-expansion-panel-content expand-icon="null" v-for="d in filteredDisciplines" :key="d.name">
+                    <template v-slot:header>
+                        <router-link class="font-weight-bold link" 
+                            :to="'/disciplines/' + d.name.toLowerCase().replace(/\s/g,'')"
+                        >
+                            {{d.name}}
+                        </router-link>
+                    </template>
+                </v-expansion-panel-content>
+                </v-expansion-panel>
+            </v-layout>
+        </v-card>
+    </v-container>
+</div>
 </template>
 
 <script>
@@ -46,35 +60,9 @@ export default {
 </script>
 
 <style>
-.disciplines{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
 
-#title{
-    margin-bottom: 30px;
-}
-
-.search-bar{
-    max-width: 40%;
-}
-
-ul{
-    background-color: rgb(46, 3, 77);
-    list-style: none;
-    padding: 10px;
-    margin-top: 30px;
-    text-align: center;
-    width: 45%;
-}
-
-li{
-    background-color: #fff;
-    border: 1px solid #eee;
-    padding: 2px 20px;
-    font-size: 1.6em;
+a{
+    text-decoration: none;
 }
 
 a:hover{
