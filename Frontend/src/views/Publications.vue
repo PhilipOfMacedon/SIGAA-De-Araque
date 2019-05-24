@@ -1,10 +1,8 @@
 <template>
   <div class="publications">
-    <h1 class="font-weight-regular blue-grey--text text--darken-4 text-md-center">Publicações</h1>
-    <v-container fluid>
-      <v-layout justify-center>
-        <v-flex sm6>
-          <v-card>
+    <v-container fluid class="lighten-3 secondary">
+          <h1 class="font-weight-regular blue-grey--text text--darken-4 ml-3">Publicações</h1>
+          <v-card flat>
             <v-layout row wrap justify-space-around class="grey lighten-3 secondary pt-4">
               <v-flex xs12 sm6>
                 <v-text-field
@@ -64,8 +62,6 @@
               </v-expansion-panel>
             </v-layout>
           </v-card>
-        </v-flex>
-      </v-layout>
     </v-container>
   </div>
 </template>

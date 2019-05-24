@@ -1,7 +1,6 @@
 <template>
   <div class="home">
-    <h1 class="display-1 font-weight-light blue-grey--text text--darken-4 text-sm-center pt-1">Home</h1>
-
+    <h1 class="display-1 font-weight-light blue-grey--text text--darken-4 pt-1 ml-3">Home</h1>
     <v-container fluid class="my-4 mx-2" align-center>
       <!-- <v-layout row wrap>
         <v-flex xs12 md6>
@@ -54,7 +53,7 @@ export default {
   data() {
     return {
       //Last login in milliseconds
-      user: { username: "Rilipe Fodrigues", lastLogin: 1558037257662 },
+      user: { username: "Filipe Rodrigues", lastLogin: 1558037257662 },
       buttons: [{name: "Projetos", route: "/projects"},
                 {name: "Grupos de Pesquisa", route: ""},
                 {name: "Pesquisadores", route: ""},

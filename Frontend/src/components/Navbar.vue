@@ -21,7 +21,7 @@
             >
           </v-list-tile-avatar>
           <v-list-tile-content>
-            <v-list-tile-title>Olá (nome do usuário)</v-list-tile-title>
+            <v-list-tile-title>Olá usuário </v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
       </v-list>
