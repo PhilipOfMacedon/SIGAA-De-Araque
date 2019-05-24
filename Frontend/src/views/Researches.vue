@@ -1,6 +1,6 @@
 <template>
   <div class="Researches">
-    <h1 class="font-weight-regular blue-grey--text text--darken-4 text-md-center">Researches</h1>
+    <h1 class="font-weight-regular blue-grey--text text--darken-4 text-md-center">Pesquisadores</h1>
     <v-container fluid>
       <v-layout justify-center>
         <v-flex sm6>
@@ -38,9 +38,11 @@
                     <div class="font-weight-bold text-md-center">{{research.name}}</div>
                   </template>
                   <v-card>
-                    <v-avatar :tile="tile" :size="avatarSize" color="grey lighten-4">
-                      <img src="https://vuetifyjs.com/apple-touch-icon-180x180.png" alt="avatar">
+                    <v-layout row justify-center>
+                        <v-avatar  :tile="tile" :size="100" color="grey lighten-1">
+                      <img src="https://genslerzudansdentistry.com/wp-content/uploads/2015/11/anonymous-user.png" alt="avatar">
                     </v-avatar>
+                    </v-layout>
                     <v-card-text class="font-weight-regular px-2 text-md-center">
                     </v-card-text>
                   </v-card>
@@ -88,7 +90,7 @@ export default {
   },
   computed: {
     filteredResearches: function() {
-      return this.publications.filter(research => {
+      return this.researches.filter(research => {
         let value = [];
 
         if (this.search.optionSelected.filter === "project") {

@@ -12,7 +12,7 @@
         <v-icon right>exit_to_app</v-icon>
       </v-btn>
     </v-toolbar>
-    <v-navigation-drawer temporary dark v-model="drawer" app class="indigo secondary">
+    <v-navigation-drawer  dark v-model="drawer" app class="indigo secondary">
       <v-list>
         <v-list-tile avatar>
           <v-list-tile-avatar>
@@ -69,7 +69,7 @@ export default {
   name: "Navbar",
   data() {
     return {
-      drawer: false,
+      drawer: true,
       homepage: "/",
       links: [
         { icon: "home", text: "Home", route: "/home" },
