@@ -1,19 +1,10 @@
 <template>
   <div class="Researches">
-    <v-container fluid class="secondary lighten-3">
-      <h1 class="font-weight-regular blue-grey--text text--darken-4 ml-3">Pesquisadores</h1>
+    <v-container fluid>
+      <h1 class="display-1 font-weight-light blue-grey--text text--darken-4 ml-3">Pesquisadores</h1>
       <v-card flat>
-        <v-layout row wrap justify-space-around class="lighten-3 secondary pt-4">
-          <v-flex xs12 sm6>
-            <v-text-field
-              label="Publicações"
-              :placeholder="'Pesquise por ' + search.optionSelected.option.toLowerCase()"
-              append-icon="search"
-              outline
-              v-model="search.elem"
-            ></v-text-field>
-          </v-flex>
-          <v-flex xm6 md4>
+        <v-layout row wrap justify-space-around class="pt-4">
+          <v-flex sx6 sm4>
             <v-select
               v-model="search.optionSelected"
               :items="search.options"
@@ -24,6 +15,14 @@
               return-object
               single-line
             ></v-select>
+          </v-flex>
+          <v-flex xs12 sm6>
+            <v-text-field
+              label="Publicações"
+              :placeholder="'Pesquise por ' + search.optionSelected.option.toLowerCase()"
+              append-icon="search"
+              v-model="search.elem"
+            ></v-text-field>
           </v-flex>
         </v-layout>
         <v-layout wrap justify-center class="grey lighten-1">

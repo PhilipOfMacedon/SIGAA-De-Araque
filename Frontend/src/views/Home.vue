@@ -1,7 +1,7 @@
 <template>
   <div class="home">
-    <h1 class="display-1 font-weight-light blue-grey--text text--darken-4 pt-1 ml-3">Home</h1>
-    <v-container fluid class="my-4 mx-2" align-center>
+    <v-container fluid class="" align-center>
+       <h1 class="display-1 font-weight-light blue-grey--text text--darken-4  ml-3">Home</h1>
       <!-- <v-layout row wrap>
         <v-flex xs12 md6>
           <v-btn outline block class="primary">1</v-btn>
@@ -56,10 +56,10 @@ export default {
       user: { username: "Filipe Rodrigues", lastLogin: 1558037257662 },
       buttons: [{name: "Projetos", route: "/projects"},
                 {name: "Grupos de Pesquisa", route: ""},
-                {name: "Pesquisadores", route: ""},
+                {name: "Pesquisadores", route: "/researches"},
                 {name: "Disciplinas", route: ""},
-                {name: "Publicações", route: ""},
-                {name: "Perfil", route: ""}]
+                {name: "Publicações", route: "/publications"},
+                {name: "Perfil", route: "/profile/edit"}]
     };
   },
   methods: {
