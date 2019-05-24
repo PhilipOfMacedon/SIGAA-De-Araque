@@ -1,21 +1,20 @@
 <template>
   <div class="projects">
-    <v-container fluid class="lighten-3 secondary">
-          <h1 class="font-weight-regular blue-grey--text text--darken-4 ml-3">Projetos</h1>
-          <v-card flat>
-            <v-layout wrap justify-center class="lighten-3 secondary">
-              <v-flex xs6 sm6 class="pt-4">
-                <v-text-field
+    <v-container fluid >
+          <h1 class="display-1 font-weight-light white--text--darken-4 ml-3">Projetos</h1>
+          <v-card >
+            <v-layout row >
+              <v-flex  sm6 offset-xs6 class="pt-4">
+                <v-text-field class="search-bar"
                   label="Projetos"
                   placeholder="nome do projeto"
                   append-icon="search"
-                  outline
                   v-model="search"
                 ></v-text-field>
               </v-flex>
             </v-layout>
             <v-layout wrap justify-center class="grey lighten-1">
-              <v-expansion-panel expand="true">
+              <v-expansion-panel expand=true>
                 <v-expansion-panel-content expand v-for="project in filteredProjects" :key="project.name">
                   <template v-slot:header>
                     <div class="font-weight-bold">{{project.name}}</div>
@@ -94,4 +93,7 @@ export default {
 </script>
   
 <style>
+.search-bar {
+  margin-right: 63px;
+}
 </style>

@@ -22,7 +22,11 @@ export default {
 </script>
 
 <style>
-#theme {
-  background-image: linear-gradient(45deg,#96b9ff,#ff96f7);
+.loginPage {
+  background-color: linear-gradient(45deg,#96b9ff,#ff96f7);
 }
+#theme {
+  background-color: #F1F5F8
+}
+
 </style>
