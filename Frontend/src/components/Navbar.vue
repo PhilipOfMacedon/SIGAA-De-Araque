@@ -1,18 +1,18 @@
 <template>
   <nav>
-    <v-toolbar app>
-      <v-toolbar-side-icon class="grey--text text--darken-3" @click="drawer = !drawer"></v-toolbar-side-icon>
-      <v-toolbar-title class="grey--text">
-        <span class="font-weight-light primary--text">SIGAA</span>
-        <span class="secondary--text">DeAraque</span>
+    <v-toolbar app color="indigo" class="indigo accent-4">
+      <v-toolbar-side-icon class="white--text text--lighten-2" @click="drawer = !drawer"></v-toolbar-side-icon>
+      <v-toolbar-title class="white--text">
+        <span class="font-weight-light  ">SIGAA</span>
+        <span class="white--text fornt-weight-bold text--darken-1">DeAraque</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-btn flat color="red" :to="homepage">
+      <v-btn flat color="white" class="" :to="homepage">
         <span>Sair</span>
         <v-icon right>exit_to_app</v-icon>
       </v-btn>
     </v-toolbar>
-    <v-navigation-drawer  dark v-model="drawer" app class="indigo secondary">
+    <v-navigation-drawer  dark v-model="drawer" app class="indigo accent-4">
       <v-list>
         <v-list-tile avatar>
           <v-list-tile-avatar>
@@ -26,7 +26,7 @@
         </v-list-tile>
       </v-list>
 
-      <v-divider light class="secondary"></v-divider>
+      <v-divider light class="white"></v-divider>
 
       <v-list>
         <v-list-tile v-for="link in links" :key="link.text" router :to="link.route">

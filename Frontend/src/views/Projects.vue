@@ -1,9 +1,9 @@
 <template>
   <div class="projects">
-    <v-container fluid class="lighten-3 secondary">
-          <h1 class="font-weight-regular blue-grey--text text--darken-4 ml-3">Projetos</h1>
-          <v-card flat>
-            <v-layout wrap justify-center class="lighten-3 secondary">
+    <v-container fluid class="lighten-3 grey">
+          <h1 class="font-weight-regular white--text--darken-4 ml-3">Projetos</h1>
+          <v-card >
+            <v-layout wrap justify-center class="">
               <v-flex xs6 sm6 class="pt-4">
                 <v-text-field
                   label="Projetos"
@@ -15,7 +15,7 @@
               </v-flex>
             </v-layout>
             <v-layout wrap justify-center class="grey lighten-1">
-              <v-expansion-panel expand="true">
+              <v-expansion-panel expand=true>
                 <v-expansion-panel-content expand v-for="project in filteredProjects" :key="project.name">
                   <template v-slot:header>
                     <div class="font-weight-bold">{{project.name}}</div>

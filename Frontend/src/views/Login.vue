@@ -1,5 +1,5 @@
 <template>
-	<v-responsive class="mx-auto mt-5">
+	<v-responsive class="mx-auto mt-5 loginPage">
 		<v-container grid-list-md>
 			<v-layout row>
 				<v-flex text-xs-center xs12 md12>

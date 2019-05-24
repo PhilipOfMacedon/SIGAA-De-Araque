@@ -3,7 +3,7 @@
     <v-container fluid class="secondary lighten-3">
       <h1 class="font-weight-regular blue-grey--text text--darken-4 ml-3">Pesquisadores</h1>
       <v-card flat>
-        <v-layout row wrap justify-space-around class="grey lighten-3 secondary pt-4">
+        <v-layout row wrap justify-space-around class="lighten-3 secondary pt-4">
           <v-flex xs12 sm6>
             <v-text-field
               label="Publicações"
