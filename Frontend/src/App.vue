@@ -1,6 +1,6 @@
 <template>
   <v-app id="theme">
-    <v-content class="mx-4 mt-2">
+    <v-content>
       <Navbar v-if='this.$route.path !== "/"'></Navbar>
       <router-view></router-view>
     </v-content>

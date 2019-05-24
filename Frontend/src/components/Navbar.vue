@@ -12,7 +12,7 @@
         <v-icon right>exit_to_app</v-icon>
       </v-btn>
     </v-toolbar>
-    <v-navigation-drawer temporary dark v-model="drawer" app class="indigo secondary">
+    <v-navigation-drawer  dark v-model="drawer" app class="indigo secondary">
       <v-list>
         <v-list-tile avatar>
           <v-list-tile-avatar>
@@ -21,7 +21,7 @@
             >
           </v-list-tile-avatar>
           <v-list-tile-content>
-            <v-list-tile-title>Olá (nome do usuário)</v-list-tile-title>
+            <v-list-tile-title>Olá usuário </v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
       </v-list>
@@ -69,12 +69,12 @@ export default {
   name: "Navbar",
   data() {
     return {
-      drawer: false,
+      drawer: true,
       homepage: "/",
       links: [
         { icon: "home", text: "Home", route: "/home" },
         { icon: "folder", text: "Projetos", route: "/projects" },
-        { icon: "assignment_ind", text: "Pesquisadores", route: "/" },
+        { icon: "assignment_ind", text: "Pesquisadores", route: "/researches" },
         { icon: "fa-tasks", text: "Disciplinas", route: "/" },
         { icon: "people", text: "Grupo de pesquisa", route: "/" },
         { icon: "fa-copy", text: "Publicações", route: "/publications" }

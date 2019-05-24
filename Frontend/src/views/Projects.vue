@@ -1,25 +1,9 @@
 <template>
   <div class="projects">
-    <h1 class="font-weight-regular blue-grey--text text--darken-4 text-md-center">Projetos</h1>
-    <!-- <v-container class="grey -ligthen-4" fill-height fluid>
-      <v-layout row wrap justify-center>
-        <v-flex xs12 sm12 md6 class="my-3 text-md-center">
-          <v-card color="grey lighten-4" flat height="200px">
-            <v-toolbar dark class="primary">
-              <v-text-field  label="Regular" placeholder="Placeholder" class="pl-1 mt-1" append-icon="search"></v-text-field>
-              <v-spacer></v-spacer>
-           
-            </v-toolbar>
-          </v-card>
-        </v-flex>
-      </v-layout>
-    </v-container>-->
-
-    <v-container fluid>
-      <v-layout justify-center>
-        <v-flex sm6>
-          <v-card>
-            <v-layout wrap justify-center class="grey lighten-3 secondary">
+    <v-container fluid class="lighten-3 secondary">
+          <h1 class="font-weight-regular blue-grey--text text--darken-4 ml-3">Projetos</h1>
+          <v-card flat>
+            <v-layout wrap justify-center class="lighten-3 secondary">
               <v-flex xs6 sm6 class="pt-4">
                 <v-text-field
                   label="Projetos"
@@ -31,8 +15,8 @@
               </v-flex>
             </v-layout>
             <v-layout wrap justify-center class="grey lighten-1">
-              <v-expansion-panel>
-                <v-expansion-panel-content v-for="project in filteredProjects" :key="project.name">
+              <v-expansion-panel expand="true">
+                <v-expansion-panel-content expand v-for="project in filteredProjects" :key="project.name">
                   <template v-slot:header>
                     <div class="font-weight-bold">{{project.name}}</div>
                   </template>
@@ -50,7 +34,7 @@
                       <div v-for="aluno in project.alunos" :key="aluno">{{aluno}}</div>
                     </v-card-text>
                     <v-flex sm12 class="text-md-center">
-                      <v-btn color="success">Vincular Aluno</v-btn>
+                      <v-btn large color="success my-3">Vincular Aluno</v-btn>
                     </v-flex>
                   </v-card>
                 </v-expansion-panel-content>
@@ -63,8 +47,6 @@
               <CreateProject v-if="addNewProject" v-model="addNewProject"/>
             </v-layout>
           </v-card>
-        </v-flex>
-      </v-layout>
     </v-container>
   </div>
 </template>
