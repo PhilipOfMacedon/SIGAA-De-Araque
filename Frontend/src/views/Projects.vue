@@ -1,15 +1,14 @@
 <template>
   <div class="projects">
-    <v-container fluid class="lighten-3 grey">
-          <h1 class="font-weight-regular white--text--darken-4 ml-3">Projetos</h1>
+    <v-container fluid >
+          <h1 class="display-1 font-weight-light white--text--darken-4 ml-3">Projetos</h1>
           <v-card >
-            <v-layout wrap justify-center class="">
-              <v-flex xs6 sm6 class="pt-4">
-                <v-text-field
+            <v-layout row >
+              <v-flex  sm6 offset-xs6 class="pt-4">
+                <v-text-field class="search-bar"
                   label="Projetos"
                   placeholder="nome do projeto"
                   append-icon="search"
-                  outline
                   v-model="search"
                 ></v-text-field>
               </v-flex>
@@ -94,4 +93,7 @@ export default {
 </script>
   
 <style>
+.search-bar {
+  margin-right: 63px;
+}
 </style>
