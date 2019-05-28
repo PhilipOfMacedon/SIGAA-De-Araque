@@ -76,7 +76,7 @@ export default {
         { icon: "folder", text: "Projetos", route: "/projects" },
         { icon: "assignment_ind", text: "Pesquisadores", route: "/researches" },
         { icon: "fa-tasks", text: "Disciplinas", route: "/" },
-        { icon: "people", text: "Grupo de pesquisa", route: "/" },
+        { icon: "people", text: "Grupo de pesquisa", route: "/researche-groups" },
         { icon: "fa-copy", text: "Publicações", route: "/publications" }
       ],
       userConfigs: [
