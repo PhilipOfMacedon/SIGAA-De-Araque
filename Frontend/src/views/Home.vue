@@ -55,7 +55,7 @@ export default {
       //Last login in milliseconds
       user: { username: "Filipe Rodrigues", lastLogin: 1558037257662 },
       buttons: [{name: "Projetos", route: "/projects"},
-                {name: "Grupos de Pesquisa", route: "/researche-groups"},
+                {name: "Grupos de Pesquisa", route: "/research-groups"},
                 {name: "Pesquisadores", route: "/researches"},
                 {name: "Disciplinas", route: "/disciplines"},
                 {name: "Publicações", route: "/publications"},

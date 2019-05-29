@@ -4,14 +4,23 @@
 			<v-expansion-panel expand=true>
 				<v-expansion-panel-content expand>
 					<template v-slot:header>
-						<div class="font-weight-bold">{{title}}</div>
+						<div class="font-weight-bold">
+							<h3>{{title}}</h3>
+						</div>
 					</template>
 					<v-card>
-						<v-layout row >
+						<v-layout row>
 							<v-flex>
 								<v-card-text class="font-weight-regular px-2 text-md-left">
-									<v-list v-for="member in members">
-										{{member}}
+									<v-list two-line>
+										<template  v-for="(member,index) in members">
+											<v-list-tile
+											@click="">
+												<v-list-tile-content>
+													<v-list-tile-title v-html="member"></v-list-tile-title>
+												</v-list-tile-content>
+											</v-list-tile>
+										</template>
 									</v-list>
 									<v-list>
 										<v-btn round outline small color="info" @click="addNewMember">
@@ -98,5 +107,9 @@ export default{
 </script>
 
 <style>
+
+.borda {
+	border: 1px solid red;
+}
 
 </style>
