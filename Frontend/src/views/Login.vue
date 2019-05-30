@@ -23,10 +23,10 @@
 			<!-- Buttons and Card's -->
 			<v-layout align-center row>
 				<v-flex text-xs-center xs6 md6>
-					<v-btn flat color="primary" @click="dialogRegister = !dialogRegister">Cadastro</v-btn>
+					<v-btn flat color="secondary" @click="dialogRegister = !dialogRegister">Cadastro</v-btn>
 				</v-flex>
 				<v-flex text-xs-center xs6 md6>
-					<v-btn flat color="primary" @click="dialogPass = !dialogPass">Esqueci a senha</v-btn>
+					<v-btn flat color="secondary" @click="dialogPass = !dialogPass">Esqueci a senha</v-btn>
 				</v-flex>
 			</v-layout>
 			<!-- <v-dialog v-model="dialogPass" max-width="400px">

@@ -6,7 +6,7 @@ import colors from 'vuetify/es5/util/colors'
 
 Vue.use(Vuetify, {
   theme: {
-    primary: colors.purple.base,
+    primary: colors.amber.accent4,
     secondary: colors.indigo.accent4,
     accent: '#82B1FF',
     error: '#FF5252',
