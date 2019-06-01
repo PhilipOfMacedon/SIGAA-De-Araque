@@ -5,7 +5,7 @@
         <v-icon medium>{{icon_type}}</v-icon>
         <v-card-title primary-title class="text-sm-center">
           <div>
-            <span class="title font-weight-regular">Total de {{info}}</span>
+            <span class="title font-weight-regular">{{info}}</span>
           </div>
         </v-card-title>
       </v-layout>
