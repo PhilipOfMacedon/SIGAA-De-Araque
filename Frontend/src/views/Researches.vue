@@ -1,7 +1,7 @@
 <template>
   <div class="Researches">
     <v-container fluid>
-      <h1 class="display-1 font-weight-light blue-grey--text text--darken-4 ml-3">Pesquisadores</h1>
+      <h1 class="display-1 font-weight-light  text--darken-4 ml-3">Pesquisadores</h1>
       <v-card flat>
         <v-layout row wrap justify-space-around class="pt-4">
           <v-flex sx6 sm4>
