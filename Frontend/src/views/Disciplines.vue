@@ -1,7 +1,7 @@
 <template>
 <div class="disciplines">
     <v-container fluid class="lighten-3 secondary">
-        <h1 class="font-weight-regular blue-grey--text text--darken-4 ml-3">Disciplinas</h1>
+        <h1 class="font-weight-light display-1 ml-3">Disciplinas</h1>
         <v-card flat>
             <v-layout wrap justify-center class="lighten-3 secondary">
                 <v-flex xs6 sm6 class="pt-4">
