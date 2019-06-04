@@ -13,9 +13,7 @@ public class SignUpService {
 	private ResearcherRepository researcherRepo;
 	
 	public String signUp(String name, String surname, String cpf, String rg, String phone, String email, String password) {
-		System.err.println("ENTREI AQUI POARR");
 		Teacher t = researcherRepo.save(new Teacher(0, name, surname, cpf, rg, phone, email, password, ""));
-		System.err.println("SALVEI?????");
 		return "ID de " + t.getName() + ": " + t.getId();
 	}
 }
