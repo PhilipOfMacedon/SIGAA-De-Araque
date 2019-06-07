@@ -57,6 +57,7 @@ export default{
 		}
 	},
 	methods: {
+		//Método utilizado para manipular o diálogo de cadastro
 		close (){
 			this.dialogRegister = false
 		}

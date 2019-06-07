@@ -77,6 +77,11 @@ export default {
     };
   },
   computed: {
+    /**
+     *  Método que filtra os projetos pelo nome, com a informação
+     *  sendo determinada pelo pelo usuário através da barra de pesquisa
+     *  @returns{projects[]} array de projetos que possui o nome pesquisado
+    */
     filteredProjects: function() {
       return this.projects.filter(project => {
         let projectName = project.name.toUpperCase();
@@ -85,6 +90,7 @@ export default {
     }
   },
   methods: {
+    // Método utilizado para controle do diálogo de cadastro de projetos
     openDialog() {
       this.addNewProject = true;
     }

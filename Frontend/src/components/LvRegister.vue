@@ -127,6 +127,10 @@ export default{
 		}
 	},
 	methods: {
+		/**
+		 * Método responsável por emitir um evento do tipo 'registered' 
+		 * para o componente pai
+		 *  */
 		register (){
 			this.$emit('registered');
 		}

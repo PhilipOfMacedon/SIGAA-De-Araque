@@ -49,6 +49,11 @@ export default {
     },
 
     computed:{
+    /**
+     *  Método que filtra as disciplinas pelo nome, com a informação
+     *  sendo determinada pelo pelo usuário através da barra de pesquisa
+     *  @returns{disciplines[]} array de disciplinas que possui o nome pesquisado
+    */
         filteredDisciplines(){
             return this.disciplines.filter(discipline => {
                 let disciplineName = discipline.name.toUpperCase();

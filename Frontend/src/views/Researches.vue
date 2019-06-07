@@ -109,6 +109,12 @@ export default {
     };
   },
   computed: {
+    /**
+     *  Método que filtra os pesquisadores pela categoria, nome do pesquisador
+     *  ou nome de projeto ou tipo de pesquisa, com as informações obtidas
+     *  pelo usuário através da barra de pesquisa
+     *  @returns{researches[]} array de pesquisadores que correspondem ao que o usuário almeja
+    */
     filteredResearches: function() {
       return this.researches.filter(research => {
         let value = [];

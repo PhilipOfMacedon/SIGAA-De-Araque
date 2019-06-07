@@ -88,6 +88,10 @@ export default {
     };
   },
   methods: {
+    /** Método utilizado para formatar millisegundos, do último tempo de 
+     *  login do usuário armazenado, para a string dia/mes/ano
+     *   @returns{string} string que apresenta a data do último login em DD/MM/YYYY
+     */ 
     getLoginDate() {
       return moment(this.user.lastLogin).format("DD/MM/YYYY");
     }
