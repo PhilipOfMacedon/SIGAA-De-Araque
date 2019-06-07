@@ -70,6 +70,10 @@ export default{
 	max-width: 400px;
 	margin: auto;
 }
+.card-home {
+	max-width: 1000px;
+	margin: auto;
+}
 .card-pass {
 	max-width: 400px;
 	margin: auto;

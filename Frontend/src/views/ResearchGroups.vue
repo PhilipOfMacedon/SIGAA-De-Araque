@@ -1,10 +1,10 @@
 <template>
 	<div class="researcheGroups">
 		<v-container fluid >
-			<h1 class="display-1 font-weight-light white--text--darken-4 ml-3">Grupos de Pesquisa</h1>
-			<v-card >
+			<h1 class="title-group pb-3 display-1 font-weight-light white--text--darken-4">Grupos de Pesquisa</h1>
+			<v-card class="card-home">
 				<v-layout row >
-					<v-flex  sm6 offset-xs6 class="pt-4">
+					<v-flex sm6 offset-xs6 class="pt-4">
 						<v-text-field class="search-bar"
 						label="Grupos de pesquisa"
 						placeholder="nome do grupo"
@@ -13,12 +13,12 @@
 						></v-text-field>
 					</v-flex>
 				</v-layout>
-				<v-list v-for="group in filteredGroups" :key="groups.title">
+				<v-list class="pl-1 pr-1" v-for="group in filteredGroups" :key="groups.title">
 					<LvResearchGroups :title="group.title" :members="group.members"/>
 				</v-list>
 				<v-layout row justify-center>
 					<v-btn large color="info" @click="addGroup">
-						<v-icon left>add_circle</v-icon> Adicionar Grupo de Pesquisa
+						<v-icon left>group_add</v-icon> Adicionar Grupo de Pesquisa
 					</v-btn>
 				</v-layout>
 				<v-dialog v-model="addNewGroup" max-width="600px">
@@ -72,9 +72,27 @@ export default{
 			addNewGroup: false,
 			search: "",
 			groups: [
-			{title: "Grupo A", members: ['Alexandre','Rafaela','Tarik','Filipe']},
-			{title: "Grupo B", members: ['Raydson','Hemerson','Marcio','Ricardo']},
-			{title: "Grupo C", members: []},
+			{title: "Grupo A", members: [
+			{
+				name: 'Alexandre',
+				ocupation: 'Pesquisador',
+			},
+			{
+				name: 'Rafaela',
+				ocupation: 'Pesquisador',
+			},
+			{
+				name: 'Tarik',
+				ocupation: 'Pesquisador',
+			},
+			{
+				name: 'Filipe',
+				ocupation: 'Pesquisador',
+			}
+			]
+		},
+			// {title: "Grupo B", members: ['Raydson','Hemerson','Marcio','Ricardo']},
+			// {title: "Grupo C", members: []},
 			]
 		}
 	},
@@ -99,16 +117,18 @@ export default{
 		},
 	},
 	computed: {
-    filteredGroups: function() {
-      return this.groups.filter(groups => {
-        let groupName = groups.title.toUpperCase();
-        return groupName.match(this.search.toUpperCase());
-      });
-    }
-  },
+		filteredGroups: function() {
+			return this.groups.filter(groups => {
+				let groupName = groups.title.toUpperCase();
+				return groupName.match(this.search.toUpperCase());
+			});
+		}
+	},
 }
 </script>
 
 <style>
-
+.title-group {
+	margin-left: 148px;
+}
 </style>
