@@ -160,7 +160,7 @@ export default{
 			this.removeMember = false
 		},
 		profile(index) {
-			alert(index)
+			alert("Aqui irá aparecer o profile do pesquisador de indice: " + index)
 		}
 	}
 }
