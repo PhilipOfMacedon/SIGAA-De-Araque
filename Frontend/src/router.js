@@ -7,6 +7,7 @@ import Publications from './views/Publications';
 import ProfileEdit from './views/ProfileEdit';
 import Login from './views/Login'
 import Disciplines from './views/Disciplines.vue'
+import ResearchGroups from './views/ResearchGroups.vue'
 
 Vue.use(Router)
 
@@ -28,12 +29,12 @@ export default new Router({
       path: '/projects',
       name: 'projects',
       component: Projects,
-    }, 
+    },
    {
       path: '/researches',
       name: 'researches',
       component: Researches,
-    }, 
+    },
     {
       path: '/publications',
       name: 'publications',
@@ -48,6 +49,11 @@ export default new Router({
       path: '/disciplines',
       name: 'disciplines',
       component: Disciplines,
+    },
+    {
+      path: '/research-groups',
+      name: 'research-groups',
+      component: ResearchGroups,
     }
   ]
 })
