@@ -9,14 +9,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.sgp.resources.requests.SignUpForm;
-import br.com.sgp.services.SignUpService;
+import br.com.sgp.services.UserService;
 
 @RestController
 @RequestMapping(value = "/signup")
 public class SignUpController {
 
 	@Autowired
-	private SignUpService signupService;
+	private UserService signupService;
 	
 	@PostMapping(value = "/submit")
 	public ResponseEntity<String> registerNewTeacher(@RequestBody SignUpForm form) {
