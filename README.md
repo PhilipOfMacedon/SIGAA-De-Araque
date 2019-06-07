@@ -198,6 +198,46 @@ components/
 - Os nomes dos componentes não devem ser abreviados.
 
 - Elementos com vários atributos devem abranger várias linhas, com um atributo por linha.
+#### Convenção Java
 
+- Primeiro os pacote e depois os imports.
 
+```
+package java.awt;
+ 
+import java.awt.peer.CanvasPeer;
+```
 
+- Javadoc deve ser utilizado para indentificação das classes, seus atributos e métodos. Ex:
+
+```
+/*
+ * Classname             (nome da classe Java)
+ * 
+ * Version information   (versionamento)
+ *
+ * Date                  (Data e Hora)
+ * 
+ * author                (autor(res) da criação)
+ * Copyright notice      (informações do método, pra que serve, idéia principal
+ */
+```
+
+- O pacote é um componente único escrito em minúsculas.
+
+- As classes são escritas em Pascal Case.
+
+- Os atributos, métodos e variáveis são escritas em Camel Case.
+
+- As constantes são escritas em maiúsculo, separadas por underline:
+
+```
+import org.springframework.web.bind.annotation.RestController;
+// ...
+public static final long SERIAL_VERSION = 1L;
+// ...
+private void loadUser(int id) {
+	int auxCont = 3;
+	// ...
+}
+```
