@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
@@ -30,11 +31,11 @@ public class Project  implements Serializable {
     private String description;
     
     @JsonManagedReference
-    @ManyToMany(mappedBy = "project")
+    @ManyToMany(mappedBy = "projects")
     private List<Researcher> researchers;
     
     @JsonBackReference
-    @OneToMany(mappedBy = "projects")
+    @OneToMany(mappedBy = "project")
     private List<Publication> publications;
 
     @ManyToOne
@@ -93,7 +94,7 @@ public class Project  implements Serializable {
         this.description = description;
     }
 
-	public List<Researchers> getResearchers() {
+	public List<Researcher> getResearchers() {
 		return researchers;
 	}
 

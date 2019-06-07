@@ -39,7 +39,7 @@
 	</v-layout>
 	<v-layout row>
 		<v-flex text-xs-center xs12 md12>
-			<v-btn color="primary" :to="route">
+			<v-btn color="secondary" :to="route">
 				Login
 			</v-btn>
 		</v-flex>
