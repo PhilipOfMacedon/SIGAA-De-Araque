@@ -19,7 +19,7 @@
 										<template v-for="(member,index) in members">
 											<v-list-tile
 											:key="index"
-											@click="">
+											>
 											<v-list-tile-content>
 												<v-list-tile-title v-html="member.name"
 												@click="profile(index)">

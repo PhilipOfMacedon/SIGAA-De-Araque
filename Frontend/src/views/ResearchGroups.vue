@@ -13,7 +13,7 @@
 						></v-text-field>
 					</v-flex>
 				</v-layout>
-				<v-list class="pl-1 pr-1" v-for="group in filteredGroups" :key="groups.title">
+				<v-list class="pl-1 pr-1" v-for="group in filteredGroups" :key="group.title">
 					<LvResearchGroups :title="group.title" :members="group.members"/>
 				</v-list>
 				<v-layout row justify-center>
