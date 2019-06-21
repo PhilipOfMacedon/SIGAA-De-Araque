@@ -51,7 +51,7 @@
 </template>
 
 <script>
-import CreateProject from "@/components/projects/CreateProject";
+import CreateProject from "@/components/project/CreateProject";
 export default {
   components: {
     CreateProject: CreateProject

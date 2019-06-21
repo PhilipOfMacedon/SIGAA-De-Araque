@@ -4,10 +4,10 @@
       <h1 class="display-1 font-weight-light text--darken-4 ml-3">Disciplinas</h1>
       <v-layout row v-for="discipline in disciplines" :key="discipline.id">
         <v-flex sx12>
-          <v-card>
+          <v-card :to="'/disciplines/details/' + discipline.id">
             <v-card-title>
               <h1
-                class="display-1 light-blue--text text--darken-1 font-weight-bold"
+                class="display-1 blue--text text--darken-1 font-weight-bold"
               >{{discipline.name}}</h1>
             </v-card-title>
             <v-card-text class>
@@ -84,12 +84,10 @@ export default {
 </script>
 
 <style>
-a {
-  text-decoration: none;
+
+.disciplines a:hover {
+  text-decoration: underline;
+  color: white;
 }
 
-a:hover {
-  text-decoration: underline;
-  color: rgb(68, 170, 151);
-}
 </style>

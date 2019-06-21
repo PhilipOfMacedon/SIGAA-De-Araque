@@ -8,6 +8,7 @@ import ProfileEdit from './views/ProfileEdit';
 import Login from './views/Login'
 import Disciplines from './views/Disciplines.vue'
 import ResearchGroups from './views/ResearchGroups.vue'
+import DisciplineDetails from './components/discipline/DisplayDiscipline'
 
 Vue.use(Router)
 
@@ -28,32 +29,38 @@ export default new Router({
     {
       path: '/projects',
       name: 'projects',
-      component: Projects,
+      component: Projects
     },
    {
       path: '/researches',
       name: 'researches',
-      component: Researches,
+      component: Researches
     },
     {
       path: '/publications',
       name: 'publications',
-      component: Publications,
+      component: Publications
     },
     {
       path: '/profile/edit',
       name: 'profileEdit',
-      component: ProfileEdit,
+      component: ProfileEdit
     },
     {
       path: '/disciplines',
       name: 'disciplines',
-      component: Disciplines,
+      component: Disciplines
     },
     {
       path: '/research-groups',
-      name: 'research-groups',
-      component: ResearchGroups,
+      name: 'researchGroups',
+      component: ResearchGroups
+    },
+    {
+      path: '/disciplines/details/:id',
+      name: 'disciplineDetails',
+      component: DisciplineDetails,
+      props: true
     }
   ]
 })
