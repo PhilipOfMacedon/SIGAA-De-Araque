@@ -57,6 +57,7 @@ export default{
 		}
 	},
 	methods: {
+		//Método utilizado para manipular o diálogo de cadastro
 		close (){
 			this.dialogRegister = false
 		}
@@ -68,6 +69,10 @@ export default{
 <style>
 .card-principal {
 	max-width: 400px;
+	margin: auto;
+}
+.card-home {
+	max-width: 1000px;
 	margin: auto;
 }
 .card-pass {

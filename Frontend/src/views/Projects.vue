@@ -1,7 +1,7 @@
 <template>
   <div class="projects">
     <v-container fluid >
-          <h1 class="display-1 font-weight-light white--text--darken-4 ml-3">Projetos</h1>
+          <h1 class="display-1 font-weight-light text--darken-4 ml-3">Projetos</h1>
           <v-card >
             <v-layout row >
               <v-flex  sm6 offset-xs6 class="pt-4">
@@ -41,7 +41,7 @@
             </v-layout>
             <v-layout row justify-center>
               <v-btn large color="info" @click.stop="openDialog">
-                <v-icon left>add_circle</v-icon> Adicionar projeto
+                <v-icon left>add</v-icon> Adicionar projeto
               </v-btn>
               <CreateProject v-if="addNewProject" v-model="addNewProject"/>
             </v-layout>
@@ -51,7 +51,7 @@
 </template>
 
 <script>
-import CreateProject from "@/components/projects/CreateProject";
+import CreateProject from "@/components/project/CreateProject";
 export default {
   components: {
     CreateProject: CreateProject
@@ -77,6 +77,11 @@ export default {
     };
   },
   computed: {
+    /**
+     *  Método que filtra os projetos pelo nome, com a informação
+     *  sendo determinada pelo pelo usuário através da barra de pesquisa
+     *  @returns{projects[]} array de projetos que possui o nome pesquisado
+    */
     filteredProjects: function() {
       return this.projects.filter(project => {
         let projectName = project.name.toUpperCase();
@@ -85,6 +90,7 @@ export default {
     }
   },
   methods: {
+    // Método utilizado para controle do diálogo de cadastro de projetos
     openDialog() {
       this.addNewProject = true;
     }

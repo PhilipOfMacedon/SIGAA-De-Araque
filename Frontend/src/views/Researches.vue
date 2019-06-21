@@ -1,7 +1,7 @@
 <template>
   <div class="Researches">
     <v-container fluid>
-      <h1 class="display-1 font-weight-light blue-grey--text text--darken-4 ml-3">Pesquisadores</h1>
+      <h1 class="display-1 font-weight-light  text--darken-4 ml-3">Pesquisadores</h1>
       <v-card flat>
         <v-layout row wrap justify-space-around class="pt-4">
           <v-flex sx6 sm4>
@@ -109,6 +109,12 @@ export default {
     };
   },
   computed: {
+    /**
+     *  Método que filtra os pesquisadores pela categoria, nome do pesquisador
+     *  ou nome de projeto ou tipo de pesquisa, com as informações obtidas
+     *  pelo usuário através da barra de pesquisa
+     *  @returns{researches[]} array de pesquisadores que correspondem ao que o usuário almeja
+    */
     filteredResearches: function() {
       return this.researches.filter(research => {
         let value = [];

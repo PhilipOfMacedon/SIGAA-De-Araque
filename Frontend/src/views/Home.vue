@@ -87,18 +87,21 @@ export default {
     return {
       //Last login in milliseconds
       user: { username: "Filipe Rodrigues", lastLogin: 1558037257662 },
-      buttons: [
-        { name: "Projetos", route: "/projects" },
-        { name: "Grupos de Pesquisa", route: "" },
-        { name: "Pesquisadores", route: "/researches" },
-        { name: "Disciplinas", route: "/disciplines" },
-        { name: "Publicações", route: "/publications" },
-        { name: "Perfil", route: "/profile/edit" }
-      ]
+      buttons: [{name: "Projetos", route: "/projects"},
+                {name: "Grupos de Pesquisa", route: "/research-groups"},
+                {name: "Pesquisadores", route: "/researches"},
+                {name: "Disciplinas", route: "/disciplines"},
+                {name: "Publicações", route: "/publications"},
+                {name: "Perfil", route: "/profile/edit"}]
     };
   },
   methods: {
     getLastLoginDate() {
+    /** Método utilizado para formatar millisegundos, do último tempo de 
+     *  login do usuário armazenado, para a string dia/mes/ano
+     *   @returns{string} string que apresenta a data do último login em DD/MM/YYYY
+     */ 
+
       return moment(this.user.lastLogin).format("DD/MM/YYYY");
     }
   }

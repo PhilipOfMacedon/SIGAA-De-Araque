@@ -92,6 +92,11 @@ export default {
     };
   },
   computed: {
+     /**
+     *  Método que filtra as publicações pela categoria área ou ator ou data,
+     *  com as informações requisitadas pelo usuário através da barra de pesquisa
+     *  @returns{publications[]} array de publicações que correspondem ao que o usuário almeja
+    */
     filteredPublications: function() {
       return this.publications.filter(publication => {
         let projectValue = "";
