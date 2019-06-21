@@ -7,7 +7,7 @@
               <v-flex  sm6 offset-xs6 class="pt-4">
                 <v-text-field class="search-bar"
                   label="Projetos"
-                  placeholder="nome do projeto"
+                  placeholder="Pesquise por nome"
                   append-icon="search"
                   v-model="search"
                 ></v-text-field>
