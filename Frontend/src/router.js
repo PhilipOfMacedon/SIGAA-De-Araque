@@ -9,8 +9,35 @@ import Login from './views/Login'
 import Disciplines from './views/Disciplines.vue'
 import ResearchGroups from './views/ResearchGroups.vue'
 import DisciplineDetails from './components/discipline/DisplayDiscipline'
+import store from './store';
 
 Vue.use(Router)
+
+
+/**
+ *  Função auxiliar para determinar se o usuário possue permissão para entrar
+ *  em determinada porção do site
+ * @param {*} to Váriavel que determina a página a ser navegada pelo usuário 
+ * @param {*} from  Váriavel que determina a posição de origem do usuário
+ * @param {*} next Callback do router que determina ações a serem executadas a seguir 
+ */
+const ifAuthenticated = (to, from, next) => {
+  if (store.getters.isLoggedIn) {
+    next()
+    return
+  }
+  next('/')
+}
+
+const ifNotAuthenticated = (to, from, next) => {
+  if (!store.getters.isLoggedIn) {
+    next()
+    return
+  }
+  next('/home')
+}
+
+
 
 export default new Router({
   mode: 'history',
@@ -19,12 +46,14 @@ export default new Router({
     {
       path: '/',
       name: 'login',
-      component: Login
+      component: Login,
+      beforeEnter: ifNotAuthenticated
     },
     {
       path: '/home',
       name: 'home',
-      component: Home
+      component: Home,
+      beforeEnter: ifAuthenticated
     },
     {
       path: '/projects',
