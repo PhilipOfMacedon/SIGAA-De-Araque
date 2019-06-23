@@ -38,39 +38,6 @@
         </v-layout>
       </v-container>
       <v-divider></v-divider>
-
-      <!-- <v-layout justify-center>
-        <v-flex md6>
-          <v-card class="mx-4 black--text text--darken-4" color="#F2F5F8" elevation="12">
-            <v-container>
-              <v-layout row class="pb-4 pt-1" justify-center wrap>
-                <v-flex sx12 md6 text-xs-center>
-                  <div class="display-1 font-weight-regular text-capitalize">
-                    Olá professor,
-                    <div>{{user.username}}</div>
-                  </div>
-                </v-flex>
-              </v-layout>
-              <v-layout row class="pt-3 pl-4">
-                <div class="font-weight-medium font-italic">Última vez logado: {{getLoginDate()}}</div>
-              </v-layout>
-              <v-layout row class="pt-4 pl-4">
-                <div class="font-weight-medium subheading">Ir para:</div>
-              </v-layout>
-              <v-layout row class="pt-3 pl-3" justify-center wrap>
-                <v-flex md4 class="text-xs-center" v-for="button in buttons" :key="button.name">
-                  <v-btn
-                    flat
-                    round
-                    class="indigo darken-2 white--text"
-                    :to="button.route"
-                  >{{button.name}}</v-btn>
-                </v-flex>
-              </v-layout>
-            </v-container>
-          </v-card>
-        </v-flex>
-      </v-layout>-->
     </v-container>
   </div>
 </template>

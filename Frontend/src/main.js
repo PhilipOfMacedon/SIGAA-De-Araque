@@ -15,20 +15,25 @@ Vue.config.productionTip = false;
 
 Vue.use(BootstrapVue);
 Vue.use(Vuetify);
-Vue.use(instance);
 
-const instance = axios.create({
-  baseURL: 'https://myapi.com'
-});
+
+const instanceApi = axios.create({
+  baseURL: 'localhost:3000/api/'
+}); 
+
+// Se tiver token, carrega e evita mandar usuário para o login
+const token = localStorage.getItem('token')
+if (token) 
+  instanceApi.defaults.headers.common['Authorization'] = token
 
 // const instanceUserApi = axios.create({
 //   baseURL: 'https://userapi.com'
-// });
+// });  
 // instanceUserApi.defaults.headers.common["Authorization"] =
 //   "Token" + localStorage.getItem("authToken");
 
 
-Vue.prototype.$http = instance;
+Vue.prototype.$http = instanceApi;
 
 new Vue({
   store,

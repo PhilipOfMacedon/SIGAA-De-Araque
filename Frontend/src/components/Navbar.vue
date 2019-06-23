@@ -7,7 +7,7 @@
         <span class="white--text fornt-weight-bold text--darken-1">DeAraque</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-btn flat color="white" class="" :to="homepage">
+      <v-btn flat color="white" class="" @click="logout()">
         <span>Sair</span>
         <v-icon right>exit_to_app</v-icon>
       </v-btn>
@@ -84,7 +84,15 @@ export default {
         { icon: "settings", text: "Configurações", route: "/projects" }
       ]
     };
-  }
+  },
+   methods: {
+      logout() {
+        this.$store.dispatch('logout')
+        .then(() => {
+          this.$router.push('/')
+        })
+      }
+    },
 };
 </script>
 

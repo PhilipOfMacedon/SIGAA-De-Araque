@@ -1,32 +1,31 @@
 <template>
   <v-app id="theme">
     <v-content>
-      <Navbar v-if='this.$route.path !== "/"'></Navbar>
+      <Navbar v-if="this.$route.path !== '/'"></Navbar>
       <router-view></router-view>
     </v-content>
   </v-app>
 </template>
 
 <script>
-import Navbar from '@/components/Navbar.vue'
+import Navbar from "@/components/Navbar.vue";
 
 export default {
-  name: 'App',
-  data () {
+  name: "App",
+  data() {
     return {
       //
-    }
+    };
   },
-  components: {Navbar},
-}
+  components: { Navbar }
+};
 </script>
 
 <style>
 .loginPage {
-  background-color: linear-gradient(45deg,#96b9ff,#ff96f7);
+  background-color: linear-gradient(45deg, #96b9ff, #ff96f7);
 }
 #theme {
-  background-color: #F1F5F8
+  background-color: #f1f5f8;
 }
-
 </style>
