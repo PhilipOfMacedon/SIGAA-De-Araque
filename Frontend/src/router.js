@@ -47,13 +47,13 @@ export default new Router({
       path: '/',
       name: 'login',
       component: Login,
-      beforeEnter: ifNotAuthenticated
+      // beforeEnter: ifNotAuthenticated
     },
     {
       path: '/home',
       name: 'home',
       component: Home,
-      beforeEnter: ifAuthenticated
+      // beforeEnter: ifAuthenticated
     },
     {
       path: '/projects',

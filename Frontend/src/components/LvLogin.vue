@@ -36,7 +36,7 @@
         </v-layout>
         <v-layout row>
           <v-flex text-xs-center xs12 md12>
-            <v-btn color="secondary"  @click='submit'>Login</v-btn>
+            <v-btn color="secondary"  :to='route'>Login</v-btn>
           </v-flex>
         </v-layout>
       </v-form>
