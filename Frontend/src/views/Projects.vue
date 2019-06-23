@@ -41,7 +41,7 @@
             </v-layout>
             <v-layout row justify-center>
               <v-btn large color="info" @click.stop="openDialog">
-                <v-icon left>add</v-icon> Adicionar projeto
+                <v-icon left>library_add</v-icon> Adicionar projeto
               </v-btn>
               <CreateProject v-if="addNewProject" v-model="addNewProject"/>
             </v-layout>

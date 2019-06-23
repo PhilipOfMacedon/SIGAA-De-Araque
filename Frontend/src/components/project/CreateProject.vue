@@ -2,7 +2,7 @@
   <v-dialog persistent v-model="showDialog" max-width="800">
     <v-card>
       <v-card-title class="justify-center">
-        <span class="headline grey--text text--darken-2 font-weight-medium ">Criar novo projeto</span>
+        <span class="display-1 grey--text text--darken-2 font-weight-light ">Criar novo projeto</span>
       </v-card-title>
       <v-card-text>
         <v-container grid-list-md>
@@ -18,8 +18,8 @@
         </v-container>
       </v-card-text>
       <v-layout justify-space-around>
-        <v-btn flat large color="success darken-1">Salvar</v-btn>
-        <v-btn flat large color="orange darken-1" @click="$emit('input', false)">Cancelar</v-btn>
+        <v-btn  large color="info darken-1">Adicionar</v-btn>
+        <v-btn  large color="warning white--text" @click="$emit('input', false)">Cancelar</v-btn>
       </v-layout>
     </v-card>
   </v-dialog>
