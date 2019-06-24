@@ -36,14 +36,15 @@
             </v-layout>
             <v-dialog v-model="newMember" max-width="600px">
               <v-card
-                class="mx-auto px-3 pt-4 pb-3 black--tex card-register"
+                class="mx-auto px-3 pt-4 pb-1 black--tex card-register"
                 color="white lighten-1"
                 elevation="12"
               >
+              <v-form class="pa-4">
                 <v-layout row>
                   <v-flex text-xs-center xs12 md12>
                     <v-toolbar-title>
-                      <h3 class="display-1 pb-3 font-weight-light grey--text  text--darken-2 text-sm-center">Adicionar Membro</h3>
+                      <h3 class="display-1 pb-3 font-weight-light grey--text  text--darken-2 text-sm-center mb-2">Adicionar Membro</h3>
                     </v-toolbar-title>
                   </v-flex>
                 </v-layout>
@@ -55,7 +56,7 @@
                     <v-text-field label="CPF do Membro" v-model="name" :mask="mask"></v-text-field>
                   </v-flex>
                 </v-layout>
-                <v-layout row>
+                <v-layout row class="mt-2">
                   <v-flex text-xs-center xs6 md6>
                     <v-btn large color="info" @click="add_confirm">Adicionar</v-btn>
                   </v-flex>
@@ -63,6 +64,7 @@
                     <v-btn large color="warning" @click="add_cancel">Cancelar</v-btn>
                   </v-flex>
                 </v-layout>
+                </v-form>
               </v-card>
             </v-dialog>
             <v-dialog v-model="removeMember" max-width="600px">
