@@ -152,7 +152,7 @@ export default {
     border-left: 4px solid #00bfa5; 
 }
 
- .v-chip.mestrado {
+.v-chip.mestrado {
   background: darkmagenta;
 }
 .v-chip.iniciacao {

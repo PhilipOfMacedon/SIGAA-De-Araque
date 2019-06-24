@@ -28,7 +28,7 @@
             color="white lighten-1"
             elevation="12"
           >
-            <v-form>
+            <v-form class="mb-1 pa-4">
               <v-layout row>
                 <v-flex text-xs-center xs12 md12>
                   <v-toolbar-title>
@@ -46,7 +46,7 @@
                   <v-text-field label="Nome do Grupo" v-model="title" :rules="addGroupRules"></v-text-field>
                 </v-flex>
               </v-layout>
-              <v-layout row>
+              <v-layout row class="mt-4">
                 <v-flex text-xs-center xs6 md6>
                   <v-btn large color="info" @click="confirm">Adicionar</v-btn>
                 </v-flex>
@@ -62,6 +62,7 @@
   </div>
 </template>
 
+
 <script>
 import LvResearchGroups from "@/components/LvResearchGroups.vue";
 
@@ -69,7 +70,7 @@ export default {
   data() {
     return {
       title: "",
-	  addNewGroup: false,
+      addNewGroup: false,
       search: "",
       groups: [
         {
@@ -95,13 +96,11 @@ export default {
         }
         // {title: "Grupo B", members: ['Raydson','Hemerson','Marcio','Ricardo']},
         // {title: "Grupo C", members: []},
-	  ],
-	addGroupRules: [
-		name => name.length > 3 || 'Mínimo de 4 caracteres' 
-	]
-	};
+      ],
+      addGroupRules: [name => name.length > 3 || "Mínimo de 4 caracteres"]
+    };
   },
-  
+
   components: { LvResearchGroups },
   methods: {
     addGroup() {
@@ -128,7 +127,7 @@ export default {
         let groupName = groups.title.toUpperCase();
         return groupName.match(this.search.toUpperCase());
       });
-	}
+    }
   }
 };
 </script>
