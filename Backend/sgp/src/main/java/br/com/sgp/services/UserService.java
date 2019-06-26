@@ -3,6 +3,7 @@ package br.com.sgp.services;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import br.com.sgp.core.SessionManager;
@@ -15,6 +16,8 @@ import br.com.sgp.resources.requests.LoginForm;
 import br.com.sgp.resources.requests.SignUpForm;
 import br.com.sgp.resources.requests.TokenRequest;
 import br.com.sgp.resources.responses.DashboardInfo;
+import br.com.sgp.resources.responses.JSONResponse;
+import br.com.sgp.resources.responses.User;
 
 @Service
 public class UserService {
@@ -48,34 +51,47 @@ public class UserService {
 		return false;
 	}
 
-	public DashboardInfo login(LoginForm form) {
+	public JSONResponse<DashboardInfo> login(LoginForm form) {
 		String email = form.getEmail();
 		String password = form.getPassword();
 		Optional<Teacher> researcher = teacherRepo.findByEmail(email);
+		DashboardInfo info = null;
+		String token = "";
+		User user = null;
+		int code = HttpStatus.FORBIDDEN.value();
 		if (!researcher.isPresent()) {
 			if (researcher.get().getPassword().equals(password)) {
 				String teacherName = researcher.get().getName();
-				int researcherCount = (int) researcherRepo.count();
-				int researchGroupCount = (int) researchGroupRepo.count();
-				int projectCount = (int) projectRepo.count();
-				int token = SessionManager.getSessionID(researcher.get());
-				return new DashboardInfo(teacherName, researcherCount, researchGroupCount, projectCount, "Sucesso!", token);
+				String researcherCount = (int) researcherRepo.count() + "";
+				String researchGroupCount = (int) researchGroupRepo.count() + "";
+				String projectCount = (int) projectRepo.count() + "";
+				code = HttpStatus.OK.value();
+				token = SessionManager.getSessionID(researcher.get());
+				user = new User(researcher.get());
+				info = new DashboardInfo(teacherName, researcherCount, researchGroupCount, projectCount, "Sucesso!");
 			}
-			return new DashboardInfo("", -1, -1, -1, "Senha incorreta!", -1);
+			info = new DashboardInfo("", "", "", "", "Senha incorreta!");
 		}
-		return new DashboardInfo("", -1, -1, -1, "Usuário não registrado!", -1);
+		info = new DashboardInfo("", "", "", "", "Usuário não registrado!");
+		return new JSONResponse<DashboardInfo>(code, token, info, user);
 	}
 
-	public DashboardInfo getDashboard(TokenRequest request) {
-		int token = request.getToken();
+	public JSONResponse<DashboardInfo> getDashboard(TokenRequest request) {
+		String token = request.getToken();
 		Teacher teacher = SessionManager.getUser(token);
+		DashboardInfo info = null;
+		User user = null;
+		int code = HttpStatus.FORBIDDEN.value();
 		if (teacher != null) {
+			code = HttpStatus.OK.value();
 			String teacherName = teacher.getName();
-			int researcherCount = (int) researcherRepo.count();
-			int researchGroupCount = (int) researchGroupRepo.count();
-			int projectCount = (int) projectRepo.count();
-			return new DashboardInfo(teacherName, researcherCount, researchGroupCount, projectCount, "Sucesso!", token);
+			String researcherCount = (int) researcherRepo.count() + "";
+			String researchGroupCount = (int) researchGroupRepo.count() + "";
+			String projectCount = (int) projectRepo.count() + "";
+			user = new User(teacher);
+			info = new DashboardInfo(teacherName, researcherCount, researchGroupCount, projectCount, "Sucesso!");
 		}
-		return new DashboardInfo("", -1, -1, -1, "Token inválido!", -1);
+		info = new DashboardInfo(null, null, null, null, "Token inválido!");
+		return new JSONResponse<DashboardInfo>(code, token, info, user);
 	}
 }

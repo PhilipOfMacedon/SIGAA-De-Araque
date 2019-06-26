@@ -12,7 +12,7 @@ import br.com.sgp.resources.requests.SignUpForm;
 import br.com.sgp.services.UserService;
 
 @RestController
-@RequestMapping(value = "/signup")
+@RequestMapping(value = "/api/signup")
 public class SignUpController {
 
 	@Autowired

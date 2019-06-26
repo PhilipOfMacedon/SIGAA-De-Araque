@@ -3,23 +3,21 @@ package br.com.sgp.resources.responses;
 public class DashboardInfo {
 	
 	private String teacherName;
-	private int researcherCount;
-	private int researchGroupCount;
-	private int projectCount;
+	private String researcherCount;
+	private String researchGroupCount;
+	private String projectCount;
 	private String message;
-	private int token;
 	
 	public DashboardInfo() {
 	}
 	
-	public DashboardInfo(String teacherName, int researcherCount, int researchGroupCount, int projectCount, String message, int token) {
+	public DashboardInfo(String teacherName, String researcherCount, String researchGroupCount, String projectCount, String message) {
 		super();
 		this.teacherName = teacherName;
 		this.researcherCount = researcherCount;
 		this.researchGroupCount = researchGroupCount;
 		this.projectCount = projectCount;
 		this.message = message;
-		this.token = token;
 	}
 
 	public String getTeacherName() {
@@ -30,27 +28,27 @@ public class DashboardInfo {
 		this.teacherName = teacherName;
 	}
 
-	public int getResearcherCount() {
+	public String getResearcherCount() {
 		return researcherCount;
 	}
 
-	public void setResearcherCount(int researcherCount) {
+	public void setResearcherCount(String researcherCount) {
 		this.researcherCount = researcherCount;
 	}
 
-	public int getResearchGroupCount() {
+	public String getResearchGroupCount() {
 		return researchGroupCount;
 	}
 
-	public void setResearchGroupCount(int researchGroupCount) {
+	public void setResearchGroupCount(String researchGroupCount) {
 		this.researchGroupCount = researchGroupCount;
 	}
 
-	public int getProjectCount() {
+	public String getProjectCount() {
 		return projectCount;
 	}
 
-	public void setProjectCount(int projectCount) {
+	public void setProjectCount(String projectCount) {
 		this.projectCount = projectCount;
 	}
 
@@ -60,14 +58,6 @@ public class DashboardInfo {
 
 	public void setMessage(String message) {
 		this.message = message;
-	}
-
-	public int getToken() {
-		return token;
-	}
-
-	public void setToken(int token) {
-		this.token = token;
 	}
 	
 }

@@ -2,21 +2,21 @@ package br.com.sgp.resources.requests;
 
 public class TokenRequest {
 	
-	private int token;
+	private String token;
 
 	public TokenRequest() {
 	}
 
-	public TokenRequest(int token) {
+	public TokenRequest(String token) {
 		super();
 		this.token = token;
 	}
 
-	public int getToken() {
+	public String getToken() {
 		return token;
 	}
 
-	public void setToken(int token) {
+	public void setToken(String token) {
 		this.token = token;
 	}
 	
