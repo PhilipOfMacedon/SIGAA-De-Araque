@@ -153,15 +153,15 @@ export default {
 }
 
 .v-chip.mestrado {
-  background: darkmagenta;
+  background: darkmagenta !important;
 }
 .v-chip.iniciacao {
-  background: #ffb300;
+  background: #ffb300 !important;
 }
 .v-chip.doutorado {
-  background: #c6ff00;
+  background: #c6ff00 !important;
 }
 .v-chip.pos-doutorado {
-  background: #00bfa5;
+  background: #00bfa5 !important;
 }
 </style>

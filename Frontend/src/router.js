@@ -1,13 +1,14 @@
-import Vue from 'vue';
-import Router from 'vue-router';
-import Home from './views/Home.vue';
-import Projects from './views/Projects';
-import Researches from './views/Researches';
-import Publications from './views/Publications';
-import ProfileEdit from './views/ProfileEdit';
+import Vue from 'vue'
+import Router from 'vue-router'
+import Home from './views/Home.vue'
+import Projects from './views/Projects'
+import Researches from './views/Researches'
+import Publications from './views/Publications'
+import ProfileEdit from './views/ProfileEdit'
 import Login from './views/Login'
 import Disciplines from './views/Disciplines.vue'
 import ResearchGroups from './views/ResearchGroups.vue'
+import Configurations from './views/Configurations.vue'
 import DisciplineDetails from './components/discipline/DisplayDiscipline'
 import store from './store';
 
@@ -84,6 +85,12 @@ export default new Router({
       path: '/research-groups',
       name: 'researchGroups',
       component: ResearchGroups
+    },
+    {
+      path: '/configurations',
+      name: 'configurations',
+      component: Configurations
+
     },
     {
       path: '/disciplines/details/:id',
