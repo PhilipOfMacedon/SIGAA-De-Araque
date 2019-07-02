@@ -10,39 +10,41 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.sgp.entities.Lesson;
 import br.com.sgp.repositories.LessonRepository;
 
-@RestController(value="/lesson")
+@RestController
+@RequestMapping(value="/lesson")
 public class LessonController {
 	
 	@Autowired
 	private LessonRepository lessonRepository; 
 	
-	@PostMapping
-	public Lesson cadastrarAula(@RequestBody Lesson lesson) {
+	@PostMapping(value="/addLesson")
+	public Lesson addLesson(@RequestBody Lesson lesson) {
 		return lessonRepository.save(lesson);
 	}
 	
-	@PutMapping
-	public Lesson alterarAula(@RequestBody Lesson lesson) {
+	@PutMapping(value="/alterLesson")
+	public Lesson alterLesson(@RequestBody Lesson lesson) {
 		return lessonRepository.save(lesson);
 	}
 	
-	@DeleteMapping("/{id}")
-	public void excluirAula(@PathVariable("id") Integer id) {
+	@DeleteMapping(value="/remove/{id}")
+	public void removeLesson(@PathVariable("id") Integer id) {
 		lessonRepository.deleteById(id);
 	}
 	
-	@GetMapping("/{id}")
-	public Optional<Lesson> buscarAula(@PathVariable("id") Integer id) {
+	@GetMapping(value="/get/{id}")
+	public Optional<Lesson> searchLesson(@PathVariable("id") Integer id) {
 		return lessonRepository.findById(id);
 	}
 	
-	@GetMapping("/aulas")
-	public List<Lesson> buscarTodasAulas() {
+	@GetMapping(value="/lessons")
+	public List<Lesson> searchAllLessons() {
 		return lessonRepository.findAll();
 	}
 

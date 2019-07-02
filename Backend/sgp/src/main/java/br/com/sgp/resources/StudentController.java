@@ -10,39 +10,41 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.sgp.entities.Student;
 import br.com.sgp.repositories.StudentRepository;
 
-@RestController(value="/student")
+@RestController
+@RequestMapping(value="/student")
 public class StudentController {
 	
 	@Autowired
 	private StudentRepository studentRepository; 
 	
-	@PostMapping
-	public Student cadastrarEstudante(@RequestBody Student student) {
+	@PostMapping(value="/addStudent")
+	public Student addStudent(@RequestBody Student student) {
 		return studentRepository.save(student);
 	}
 	
-	@PutMapping
-	public Student alterarEstudante(@RequestBody Student student) {
+	@PutMapping(value="/alterStudent")
+	public Student alterStudent(@RequestBody Student student) {
 		return studentRepository.save(student);
 	}
 	
-	@DeleteMapping("/{id}")
-	public void excluirEstudante(@PathVariable("id") Integer id) {
+	@DeleteMapping(value="/delete/{id}")
+	public void removeStudent(@PathVariable("id") Integer id) {
 		studentRepository.deleteById(id);
 	}
 	
-	@GetMapping("/{id}")
-	public Optional<Student> buscarEstudante(@PathVariable("id") Integer id) {
+	@GetMapping(value="/search/{id}")
+	public Optional<Student> searchStudent(@PathVariable("id") Integer id) {
 		return studentRepository.findById(id);
 	}
 	
-	@GetMapping("/estudantes")
-	public List<Student> buscarTodosEstudantes() {
+	@GetMapping(value="/student")
+	public List<Student> searchAllStudents() {
 		return studentRepository.findAll();
 	}
 }

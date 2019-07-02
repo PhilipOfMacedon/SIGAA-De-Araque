@@ -10,39 +10,41 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.sgp.entities.ResearchGroup;
 import br.com.sgp.repositories.ResearchGroupRepository;
 
-@RestController(value="/researchgroup")
+@RestController
+@RequestMapping(value="/researchgroup")
 public class ResearchGroupController {
 	
 	@Autowired
 	private ResearchGroupRepository researchGroupRepository; 
 	
-	@PostMapping
-	public ResearchGroup cadastrarGrupoDePesquisa(@RequestBody ResearchGroup researchGroup) {
+	@PostMapping(value="/addResearchGroup")
+	public ResearchGroup addResearchGroup(@RequestBody ResearchGroup researchGroup) {
 		return researchGroupRepository.save(researchGroup);
 	}
 	
-	@PutMapping
-	public ResearchGroup alterarGrupoDePesquisa(@RequestBody ResearchGroup researchGroup) {
+	@PutMapping(value="/alterResearchGroup")
+	public ResearchGroup alterResearchGroup(@RequestBody ResearchGroup researchGroup) {
 		return researchGroupRepository.save(researchGroup);
 	}
 	
-	@DeleteMapping("/{id}")
-	public void excluirGrupoDePesquisa(@PathVariable("id") Integer id) {
+	@DeleteMapping(value="/remove/{id}")
+	public void removeResearchGroup(@PathVariable("id") Integer id) {
 		researchGroupRepository.deleteById(id);
 	}
 	
-	@GetMapping("/{id}")
-	public Optional<ResearchGroup> buscarGrupoDePesquisa(@PathVariable("id") Integer id) {
+	@GetMapping(value="/search/{id}")
+	public Optional<ResearchGroup> searchResearchGroup(@PathVariable("id") Integer id) {
 		return researchGroupRepository.findById(id);
 	}
 	
-	@GetMapping("/gruposDePesquisa")
-	public List<ResearchGroup> buscarTodosGruposDePesquisa() {
+	@GetMapping("/researchGroups")
+	public List<ResearchGroup> searchAllResearchGroups() {
 		return researchGroupRepository.findAll();
 	}
 }

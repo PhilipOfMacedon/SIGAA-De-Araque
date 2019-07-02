@@ -10,39 +10,41 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.sgp.entities.Subject;
 import br.com.sgp.repositories.SubjectRepository;
 
-@RestController(value="/subjectcontroller")
+@RestController
+@RequestMapping(value="/subjectcontroller")
 public class SubjectController {
 	
 	@Autowired
 	private SubjectRepository subjectRepository; 
 	
-	@PostMapping
+	@PostMapping(value="/addSubject")
 	public Subject cadastrarDisciplina(@RequestBody Subject subject) {
 		return subjectRepository.save(subject);
 	}
 	
-	@PutMapping
-	public Subject alterarDisciplina(@RequestBody Subject subject) {
+	@PutMapping(value="/alterSubject")
+	public Subject alterSubject(@RequestBody Subject subject) {
 		return subjectRepository.save(subject);
 	}
 	
-	@DeleteMapping("/{id}")
-	public void excluirSubject(@PathVariable("id") Integer id) {
+	@DeleteMapping(value="/{id}")
+	public void removeSubject(@PathVariable("id") Integer id) {
 		subjectRepository.deleteById(id);
 	}
 	
-	@GetMapping("/{id}")
-	public Optional<Subject> buscarDicisplina(@PathVariable("id") Integer id) {
+	@GetMapping(value="/{id}")
+	public Optional<Subject> searchSubject(@PathVariable("id") Integer id) {
 		return subjectRepository.findById(id);
 	}
 	
-	@GetMapping("/projetos")
-	public List<Subject> buscarTodasDisciplinas() {
+	@GetMapping(value="/subjects")
+	public List<Subject> searchAllSubjects() {
 		return subjectRepository.findAll();
 	}
 }

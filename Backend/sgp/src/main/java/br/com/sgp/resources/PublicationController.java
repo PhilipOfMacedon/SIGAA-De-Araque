@@ -10,39 +10,41 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.sgp.entities.Publication;
 import br.com.sgp.repositories.PublicationRepository;
 
-@RestController(value="/publication")
+@RestController
+@RequestMapping(value="/publication")
 public class PublicationController {
 	
 	@Autowired
 	private PublicationRepository publicationRepository; 
 	
-	@PostMapping
-	public Publication cadastrarPublicacao(@RequestBody Publication publication) {
+	@PostMapping(value="/addPublication")
+	public Publication addPublication(@RequestBody Publication publication) {
 		return publicationRepository.save(publication);
 	}
 	
-	@PutMapping
-	public Publication alterarPublicacao(@RequestBody Publication publication) {
+	@PutMapping(value="/alterPublication")
+	public Publication alterPublication(@RequestBody Publication publication) {
 		return publicationRepository.save(publication);
 	}
 	
-	@DeleteMapping("/{id}")
-	public void excluirPublicacao(@PathVariable("id") Integer id) {
+	@DeleteMapping(value="/{id}")
+	public void removePublication(@PathVariable("id") Integer id) {
 		publicationRepository.deleteById(id);
 	}
 	
-	@GetMapping("/{id}")
-	public Optional<Publication> buscarPublicacao(@PathVariable("id") Integer id) {
+	@GetMapping(value="/{id}")
+	public Optional<Publication> searchPublication(@PathVariable("id") Integer id) {
 		return publicationRepository.findById(id);
 	}
 	
-	@GetMapping("/publicacoes")
-	public List<Publication> buscarTodasPublicacoes() {
+	@GetMapping(value="/publications")
+	public List<Publication> searchAllPublications() {
 		return publicationRepository.findAll();
 	}
 }

@@ -10,39 +10,41 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.sgp.entities.Teacher;
 import br.com.sgp.repositories.TeacherRepository;
 
-@RestController(value="/professorcontroller")
+@RestController
+@RequestMapping(value="/professorcontroller")
 public class TeacherController {
 	
 	@Autowired
 	private TeacherRepository teacherRepository; 
 	
-	@PostMapping
-	public Teacher cadastrarProfessor(@RequestBody Teacher teacher) {
+	@PostMapping(value="/addTeacher")
+	public Teacher addTeacher(@RequestBody Teacher teacher) {
 		return teacherRepository.save(teacher);
 	}
 	
-	@PutMapping
-	public Teacher alterarProfessor(@RequestBody Teacher teacher) {
+	@PutMapping(value="alterTeacher")
+	public Teacher alterTeacher(@RequestBody Teacher teacher) {
 		return teacherRepository.save(teacher);
 	}
 	
-	@DeleteMapping("/{id}")
-	public void excluirProfessor(@PathVariable("id") Integer id) {
+	@DeleteMapping(value="/remove/{id}")
+	public void removeTeacher(@PathVariable("id") Integer id) {
 		teacherRepository.deleteById(id);
 	}
 	
-	@GetMapping("/{id}")
-	public Optional<Teacher> buscarProfessor(@PathVariable("id") Integer id) {
+	@GetMapping(value="/search/{id}")
+	public Optional<Teacher> searchTeacher(@PathVariable("id") Integer id) {
 		return teacherRepository.findById(id);
 	}
 	
-	@GetMapping("/professores")
-	public List<Teacher> buscarTodosProfessores() {
+	@GetMapping(value="/teachers")
+	public List<Teacher> searchAllTeacher() {
 		return teacherRepository.findAll();
 	}
 }

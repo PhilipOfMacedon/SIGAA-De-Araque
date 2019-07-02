@@ -10,39 +10,41 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.sgp.entities.Researcher;
 import br.com.sgp.repositories.ResearcherRepository;
 
-@RestController(value="/researcher")
+@RestController
+@RequestMapping(value="/researcher")
 public class ResearcherController {
 	
 	@Autowired
 	private ResearcherRepository researcherRepository; 
 	
-	@PostMapping
-	public Researcher cadastrarPesquisador(@RequestBody Researcher researcher) {
+	@PostMapping(value="/addResearcher")
+	public Researcher caddResearcher(@RequestBody Researcher researcher) {
 		return researcherRepository.save(researcher);
 	}
 	
-	@PutMapping
-	public Researcher alterarPesquisador(@RequestBody Researcher researcher) {
+	@PutMapping(value="/alterResearcher")
+	public Researcher alterResearcher(@RequestBody Researcher researcher) {
 		return researcherRepository.save(researcher);
 	}
 	
-	@DeleteMapping("/{id}")
-	public void excluirPesquisador(@PathVariable("id") Integer id) {
+	@DeleteMapping(value="/delete/{id}")
+	public void removeResearcher(@PathVariable("id") Integer id) {
 		researcherRepository.deleteById(id);
 	}
 	
-	@GetMapping("/{id}")
-	public Optional<Researcher> buscarPesquisador(@PathVariable("id") Integer id) {
+	@GetMapping(value="/get/{id}")
+	public Optional<Researcher> searchResearcher(@PathVariable("id") Integer id) {
 		return researcherRepository.findById(id);
 	}
 	
-	@GetMapping("/pesquisadores")
-	public List<Researcher> buscarTodosProjetos() {
+	@GetMapping(value="/researchers")
+	public List<Researcher> searchAllResearcher() {
 		return researcherRepository.findAll();
 	}
 }

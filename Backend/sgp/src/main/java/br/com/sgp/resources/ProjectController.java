@@ -10,39 +10,41 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.sgp.entities.Project;
 import br.com.sgp.repositories.ProjectRepository;
 
-@RestController(value="/project")
+@RestController
+@RequestMapping(value="/project")
 public class ProjectController {
 	
 	@Autowired
 	private ProjectRepository projectRepository; 
 	
-	@PostMapping
-	public Project cadastrarProjeto(@RequestBody Project project) {
+	@PostMapping(value="/addProject")
+	public Project addProject(@RequestBody Project project) {
 		return projectRepository.save(project);
 	}
 	
-	@PutMapping
-	public Project alterarProjeto(@RequestBody Project project) {
+	@PutMapping(value="/alterProject")
+	public Project alterProject(@RequestBody Project project) {
 		return projectRepository.save(project);
 	}
 	
-	@DeleteMapping("/{id}")
-	public void excluirProjeto(@PathVariable("id") Integer id) {
+	@DeleteMapping(value="/delete/{id}")
+	public void deleteProject(@PathVariable("id") Integer id) {
 		projectRepository.deleteById(id);
 	}
 	
-	@GetMapping("/{id}")
-	public Optional<Project> buscarProjeto(@PathVariable("id") Integer id) {
+	@GetMapping(value="/get/{id}")
+	public Optional<Project> searchProject(@PathVariable("id") Integer id) {
 		return projectRepository.findById(id);
 	}
 	
-	@GetMapping("/projetos")
-	public List<Project> buscarTodosProjetos() {
+	@GetMapping(value="/projects")
+	public List<Project> searchAllProjects() {
 		return projectRepository.findAll();
 	}
 }
