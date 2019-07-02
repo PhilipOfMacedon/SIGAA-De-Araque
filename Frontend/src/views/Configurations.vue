@@ -12,16 +12,20 @@
           </v-flex>
         </v-layout>
       </v-card>-->
-      <v-tabs v-model="active" color="secondary" dark grow slider-color="primary">
+      <v-tabs v-model="active" color="secondary" dark grow slider-color="primary" icons-and-text>
         <v-tab v-for="n in 2" :key="n" ripple>
-          <template v-if="n===1">Editar email</template>
-
-          <template v-else>Editar senha</template>
+          <template v-if="n===1">Alterar email <v-icon>fa-at</v-icon></template>
+          <template v-else>Alterar senha <v-icon>fa-key</v-icon></template>
         </v-tab>
         <v-tab-item v-for="n in 2" :key="n">
-          <template v-if="n===1">
-            <EmailForm :user="user" />
-          </template>
+          <v-card hover>
+            <template v-if="n===1">
+              <EmailForm :user="user" />
+            </template>
+            <template v-else>
+              <PasswdForm :user="user" />
+            </template>
+          </v-card>
         </v-tab-item>
       </v-tabs>
     </v-container>
@@ -29,6 +33,7 @@
 </template>
 <script>
 import EmailForm from "../components/configurations/ChangeEmailForm";
+import PasswdForm from "../components/configurations/ChangePasswdForm";
 
 export default {
   data() {
@@ -41,7 +46,8 @@ export default {
     };
   },
   components: {
-    EmailForm
+    EmailForm,
+    PasswdForm
   }
 };
 </script>
