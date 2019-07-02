@@ -20,6 +20,7 @@ public class SignUpController {
 	
 	@PostMapping(value = "/submit")
 	public ResponseEntity<String> registerNewTeacher(@RequestBody SignUpForm form) {
+		System.err.println("ENTREI");
 		if (!form.hasEmptyFields()) {
 			boolean saved = signupService.signUp(form);
 			if (saved) {
