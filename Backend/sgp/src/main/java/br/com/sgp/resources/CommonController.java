@@ -25,7 +25,7 @@ public class CommonController {
 	@RequestMapping("/login/request")
 	@ResponseBody
 	public JSONResponse<String> requestLogin() {
-		return new JSONResponse<String>(HttpStatus.FORBIDDEN.value(), , "User must login to continue.", new User());
+		return new JSONResponse<String>(HttpStatus.FORBIDDEN.value(), null, "User must login to continue.", new User());
 	}
 	
 	@PostMapping("/login/submit")
