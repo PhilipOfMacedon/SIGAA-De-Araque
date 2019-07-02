@@ -81,7 +81,7 @@ export default {
       ],
       userConfigs: [
         { icon: "fa-edit", text: "Editar pefil", route: "/profile/edit" },
-        { icon: "settings", text: "Configurações", route: "/projects" }
+        { icon: "settings", text: "Configurações", route: "/configurations" }
       ]
     };
   },

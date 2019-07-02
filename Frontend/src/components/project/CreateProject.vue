@@ -38,7 +38,7 @@ export default {
   data() {
     return {
       showDialog: this.value,
-      categories: ["Iniciação científica", "Mestrado", "Doutorado"],
+      categories: ["Iniciação científica", "Mestrado", "Doutorado", "Pós-doutorado" ],
       selectedCategory: "",
       project: { name: "", category: "", students: "" },
       rules: {
