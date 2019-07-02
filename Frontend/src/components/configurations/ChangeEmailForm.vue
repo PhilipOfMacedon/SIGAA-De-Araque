@@ -1,8 +1,8 @@
 <template>
   <v-card>
     <v-container>
-      <v-card-title>
-        <span class="title blue-grey--text text--darken-3">Mudar endereço de email</span>
+      <v-card-title primary-title>
+        <span class="headline blue-grey--text text--darken-3">Mudar endereço de email</span>
       </v-card-title>
       <v-card-text>
         <v-layout row>
@@ -11,7 +11,7 @@
               <v-text-field
                 label="Novo email"
                 :rules="rules.email"
-                :placeholder="user.email"
+                :placeholder="'exemplo@gmail.com'"
                 v-model="inputEmail"
                 required
               ></v-text-field>
@@ -22,7 +22,7 @@
                 required
               ></v-text-field>
 
-              <v-btn color="info" @click="submitUserEdit">Enviar alteração</v-btn>
+              <v-btn class="mt-4 mb-0" color="info" @click="submitEmailEdit">Enviar alteração</v-btn>
               <v-snackbar
                 v-model="snackbar"
                 :color="snackbarColor"
@@ -50,7 +50,7 @@ export default {
         email: [
           email => emailValidator.validate(email) || emailValidator.getMessage()
         ],
-        password: [passwd => passwd.length >= 8 || "Mínimo de 8 carcateres"]
+        password: [passwd => !!passwd || "Senha requerida", passwd => passwd.length >= 8 || "Mínimo de 8 caracteres"]
       },
       inputEmail: "",
       inputPasswd: "",
@@ -65,7 +65,7 @@ export default {
     }
   },
   methods: {
-    submitUserEdit() {
+    submitEmailEdit() {
       if (this.$refs.form.validate()) {
         if (this.user.password === this.inputPasswd) {
           //logica de alteração de usuário
