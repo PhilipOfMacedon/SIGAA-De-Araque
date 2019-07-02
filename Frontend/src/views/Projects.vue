@@ -60,7 +60,8 @@ export default {
     return {
       search: "",
       addNewProject: false,
-      projects: [
+      //COLOQUEI AQUI O DATA PROJECTS -------
+      projects: [ //],
         {
           name: "Projeto1",
           author: "Professor1",
@@ -72,8 +73,21 @@ export default {
           author: "Professor2",
           category: "Iniciação científica",
           alunos: ["Aluno1, Aluno2, Aluno3"]
+        },
+        {
+          name: "Projeto3",
+          author: "Professor3",
+          category: "Iniciação científica",
+          alunos: ["Aluno1, Aluno2, Aluno3"]
+        },
+        {
+          name: "Projeto4",
+          author: "Professor3",
+          category: "Iniciação científica",
+          alunos: ["Aluno1, Aluno2, Aluno3"]
         }
-      ]
+        
+      ],
     };
   },
   computed: {
@@ -88,6 +102,16 @@ export default {
         return projectName.match(this.search.toUpperCase());
       });
     }
+  },
+  /**
+   * Função para listar os projetos -> pega o projeto no back
+  */
+  created:function(){
+    this.$http.get ("http://localhost:8090/project/projects").then(function (response){
+      this.projects=response.body;
+    }, function (response){
+        console.log("Nenhum projeto!")
+    })
   },
   methods: {
     // Método utilizado para controle do diálogo de cadastro de projetos
