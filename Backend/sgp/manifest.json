@@ -1,0 +1,12 @@
+{
+  "runtime":{
+    "majorVersion": "8"
+  },
+  "command": "java -jar sgp-0.0.1-SNAPSHOT.jar",
+  "release": {
+    "build": "2019",
+    "commit": "oracle cloud example",
+    "version": "0.0.1-SNAPSHOT"
+  },
+  "notes": "REST Spring Boot 2 app Oracle Cloud"
+}

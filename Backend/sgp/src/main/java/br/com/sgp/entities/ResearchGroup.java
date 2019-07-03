@@ -13,6 +13,8 @@ import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty.Access;
 
 @Entity
 public class ResearchGroup implements Serializable {
@@ -28,10 +30,12 @@ public class ResearchGroup implements Serializable {
 	
 	@JsonBackReference
 	@OneToMany(mappedBy = "researchGroup")
+	@JsonProperty(access = Access.READ_ONLY)
 	private List<Project> projects;
 	
 	@JsonManagedReference
 	@ManyToMany(mappedBy = "researchGroups")
+	@JsonProperty(access = Access.READ_ONLY)
 	private List<Researcher> researchers;
 
 	public ResearchGroup() {

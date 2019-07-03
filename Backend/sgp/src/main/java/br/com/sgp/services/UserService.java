@@ -59,7 +59,7 @@ public class UserService {
 		String token = "";
 		User user = null;
 		int code = HttpStatus.FORBIDDEN.value();
-		if (!researcher.isPresent()) {
+		if (researcher.isPresent()) {
 			if (researcher.get().getPassword().equals(password)) {
 				String teacherName = researcher.get().getName();
 				String researcherCount = (int) researcherRepo.count() + "";
@@ -92,8 +92,9 @@ public class UserService {
 			String projectCount = (int) projectRepo.count() + "";
 			user = new User(teacher);
 			info = new DashboardInfo(teacherName, researcherCount, researchGroupCount, projectCount, "Sucesso!");
+		} else {
+			info = new DashboardInfo(null, null, null, null, "Token inválido!");
 		}
-		info = new DashboardInfo(null, null, null, null, "Token inválido!");
 		return new JSONResponse<DashboardInfo>(code, token, info, user);
 	}
 }
