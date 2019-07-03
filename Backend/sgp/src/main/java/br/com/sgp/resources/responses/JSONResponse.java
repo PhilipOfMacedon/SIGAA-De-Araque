@@ -1,5 +1,8 @@
 package br.com.sgp.resources.responses;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class JSONResponse<T> {
 	
 	private int status;
@@ -7,7 +10,10 @@ public class JSONResponse<T> {
 	private T data;
 	private User user;
 	
+	private Map<String, Object> response;
+	
 	public JSONResponse() {
+		response = new HashMap<String, Object>();
 	}
 	
 	public JSONResponse(int status, String token, T data, User user) {

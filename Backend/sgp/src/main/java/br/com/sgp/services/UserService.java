@@ -69,10 +69,12 @@ public class UserService {
 				token = SessionManager.getSessionID(researcher.get());
 				user = new User(researcher.get());
 				info = new DashboardInfo(teacherName, researcherCount, researchGroupCount, projectCount, "Sucesso!");
+			} else {
+				info = new DashboardInfo("", "", "", "", "Senha incorreta!");
 			}
-			info = new DashboardInfo("", "", "", "", "Senha incorreta!");
+		} else {
+			info = new DashboardInfo("", "", "", "", "Usuário não registrado!");
 		}
-		info = new DashboardInfo("", "", "", "", "Usuário não registrado!");
 		return new JSONResponse<DashboardInfo>(code, token, info, user);
 	}
 
