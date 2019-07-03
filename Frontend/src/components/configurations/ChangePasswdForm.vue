@@ -60,7 +60,7 @@ export default {
   data() {
     return {
       rules: {
-        password: [passwd => !!passwd || "Senha requerida", passwd => passwd.length >= 8 || "Mínimo de 8 caracteres"],
+        password: [passwd => !!passwd || "Senha obrigatória", passwd => passwd.length >= 8 || "Mínimo de 8 caracteres"],
         confirmPassword: [() => this.inputConfirmPasswd === this.inputNewPasswd || "As senhas estão diferentes"]
       },
       showOldPasswd: false,

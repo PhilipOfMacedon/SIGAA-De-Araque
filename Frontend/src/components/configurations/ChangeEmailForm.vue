@@ -50,7 +50,7 @@ export default {
         email: [
           email => emailValidator.validate(email) || emailValidator.getMessage()
         ],
-        password: [passwd => !!passwd || "Senha requerida", passwd => passwd.length >= 8 || "Mínimo de 8 caracteres"]
+        password: [passwd => !!passwd || "Senha obrigatória", passwd => passwd.length >= 8 || "Mínimo de 8 caracteres"]
       },
       inputEmail: "",
       inputPasswd: "",

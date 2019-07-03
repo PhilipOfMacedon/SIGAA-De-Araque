@@ -40,7 +40,7 @@ export default {
       showDialog: this.value,
       categories: ["Iniciação científica", "Mestrado", "Doutorado", "Pós-doutorado" ],
       selectedCategory: "",
-      project: { name: "", category: "", students: "" },
+      project: { name: "", knowledgeField: "", students: "" },
       rules: {
         projectName: [
           name => name.length > 3 || "Mínimo de 4 caracteres",
@@ -48,6 +48,17 @@ export default {
         ]
       }
     };
+  },
+
+  methods: {
+    //Método para inserção do projeto
+    inserir: function(){
+      this.$http.post ("http://localhost:8090/project/addProject", this.project).then(function (response){
+        this.projects.push(response.body);
+      }, function (response){
+        console.log("Nenhum projeto!")
+      })
+    }
   }
 };
 </script>
