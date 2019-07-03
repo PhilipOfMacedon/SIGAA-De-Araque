@@ -11,6 +11,8 @@ import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty.Access;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -18,7 +20,7 @@ import java.util.List;
 import java.util.Objects;
 
 @Entity
-public class Project  implements Serializable {
+public class Project implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,15 +34,26 @@ public class Project  implements Serializable {
     
     @JsonManagedReference
     @ManyToMany(mappedBy = "projects")
+    @JsonProperty(access = Access.READ_ONLY)
     private List<Researcher> researchers;
     
     @JsonBackReference
     @OneToMany(mappedBy = "project")
+    @JsonProperty(access = Access.READ_ONLY)
     private List<Publication> publications;
 
     @ManyToOne
     @JoinColumn(name = "researchGroup_id")
+    @JsonProperty(access = Access.READ_ONLY)
     private ResearchGroup researchGroup;
+    
+    @ManyToOne
+    @JoinColumn(name = "teacher_id")
+    @JsonProperty(access = Access.READ_ONLY)
+    private Teacher teacher;
+    
+    public Project() {
+    }
     
     public Project(Integer id) {
         this.id = id;

@@ -15,6 +15,10 @@ public class Teacher extends Researcher implements LoggableUser {
 	@JsonBackReference
 	@OneToMany(mappedBy = "teacher")
 	private List<Subject> subjects;
+	
+	@JsonBackReference
+	@OneToMany(mappedBy = "teacher")
+	private List<Project> projects;
 
 	public Teacher() {
 		super();
@@ -40,6 +44,14 @@ public class Teacher extends Researcher implements LoggableUser {
 
 	public void setSubjects(List<Subject> subjects) {
 		this.subjects = subjects;
+	}
+
+	public List<Project> getProjects() {
+		return projects;
+	}
+
+	public void setProjects(List<Project> projects) {
+		this.projects = projects;
 	}
 
 	public String getPassword() {
