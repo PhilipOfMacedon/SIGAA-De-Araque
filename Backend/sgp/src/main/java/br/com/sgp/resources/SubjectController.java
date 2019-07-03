@@ -18,7 +18,7 @@ import br.com.sgp.entities.Subject;
 import br.com.sgp.repositories.SubjectRepository;
 
 @RestController
-@RequestMapping(value="/subjectcontroller")
+@RequestMapping(value="/subject")
 @CrossOrigin(origins="*")
 public class SubjectController {
 	

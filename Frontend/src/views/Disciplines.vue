@@ -38,9 +38,7 @@
 export default {
   data() {
     return {
-      //Apenas para propósitos de simulação, futuramente, as disciplinas serão lidas do
-      //banco de dados
-      disciplines: [
+      disciplines: [ //;
         {
           id: 150,
           name: "Banco de dados",
@@ -66,7 +64,16 @@ export default {
       searchStr: ""
     };
   },
-
+   /**
+   * Função utilizada para obter as disciplinas no BD através do backend
+  */
+  created:function(){
+    this.$http.get ("http://localhost:8090/subject/subjects").then(function (response){
+      this.disciplines=response.body;
+    }, function (response){
+        console.log("Nenhuma disciplina!")
+    })
+  },
   computed: {
     /**
      *  Método que filtra as disciplinas pelo nome, com a informação

@@ -14,7 +14,7 @@
               </v-flex>
             </v-layout>
             <v-layout wrap justify-center class="grey lighten-1">
-              <v-expansion-panel expand=true>
+              <v-expansion-panel expand=true> <!--Estava apontando como erro expand=true-->
                 <v-expansion-panel-content expand v-for="project in filteredProjects" :key="project.name">
                   <template v-slot:header>
                     <div class="font-weight-bold">{{project.name}}</div>
@@ -60,36 +60,23 @@ export default {
     return {
       search: "",
       addNewProject: false,
-      //COLOQUEI AQUI O DATA PROJECTS -------
-      projects: [ //],
-        {
-          name: "Projeto1",
-          author: "Professor1",
-          category: "Iniciação científica",
-          alunos: ["Aluno1, Aluno2, Aluno3"]
-        },
-        {
-          name: "Projeto2",
-          author: "Professor2",
-          category: "Iniciação científica",
-          alunos: ["Aluno1, Aluno2, Aluno3"]
-        },
-        {
-          name: "Projeto3",
-          author: "Professor3",
-          category: "Iniciação científica",
-          alunos: ["Aluno1, Aluno2, Aluno3"]
-        },
-        {
-          name: "Projeto4",
-          author: "Professor3",
-          category: "Iniciação científica",
-          alunos: ["Aluno1, Aluno2, Aluno3"]
-        }
-        
-      ],
+      //backEndIP: "192.168.1.101:8090",
+      projects: [],
     };
   },
+
+  /**
+   * Função utilizada para obter os projetos no BD através do backend
+  */
+  mounted: { 
+      this.$http.get("http://192.168.1.101:8090/project/projects").then(response => { 
+        this.projects = response.body
+      }).catch(error => {
+        console.log("Aconteceu um erro")
+        console.log(error)
+      })
+  },
+
   computed: {
     /**
      *  Método que filtra os projetos pelo nome, com a informação
@@ -103,16 +90,7 @@ export default {
       });
     }
   },
-  /**
-   * Função para listar os projetos -> pega o projeto no back
-  */
-  created:function(){
-    this.$http.get ("http://localhost:8090/project/projects").then(function (response){
-      this.projects=response.body;
-    }, function (response){
-        console.log("Nenhum projeto!")
-    })
-  },
+  
   methods: {
     // Método utilizado para controle do diálogo de cadastro de projetos
     openDialog() {

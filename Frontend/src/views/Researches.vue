@@ -77,13 +77,15 @@ export default {
       search: {
         elem: "",
         options: [
-          { option: "Nome", filter: "name" },
+          { option: "Nome", filter: "name" }
+          /** 
           { option: "Tipo de projeto", filter: "type" },
           { option: "Projetos", filter: "project" }
+          */
         ],
         optionSelected: { option: "nome", filter: "name" }
       },
-      researches: [
+      researches: [ //],
         {
           name: "Professor1",
           projects: [
@@ -108,6 +110,15 @@ export default {
       ]
     };
   },
+
+  created:function(){
+    this.$http.get ("http://localhost:8090/researcher/researchers").then(function (response){
+      this.researches=response.body;
+    }, function (response){
+        console.log("Nenhum pesquisador!")
+    })
+  },
+
   computed: {
     /**
      *  Método que filtra os pesquisadores pela categoria, nome do pesquisador
