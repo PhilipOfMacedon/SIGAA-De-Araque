@@ -163,16 +163,16 @@ export default {
         this.resetInput();
       }
     },
-    mounted() {
-      this.$http.get('http://192.168.1.101:8080/project/projects')
-      .then( reponse => {
-        this.projects = response.body
-      })
-      .catch(error => {
-        console.log("Acontceu um erro")
-        console.log(error)
-      })
-    },
+    // mounted() {
+    //   this.$http.get('http://192.168.1.101:8080/project/projects')
+    //   .then( reponse => {
+    //     this.projects = response.body
+    //   })
+    //   .catch(error => {
+    //     console.log("Acontceu um erro")
+    //     console.log(error)
+    //   })
+    // },
     resetInput() {
       this.newLessonDialog = false;
       (this.input.title = ""),

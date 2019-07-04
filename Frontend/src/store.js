@@ -4,7 +4,8 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
-axios.defaults.baseURL = 'localhost:3000/api/'
+axios.defaults.baseURL = 'localhost:8090/api/'
+axios.defaults.headers.common['Access-Control-Allow-Origin'] = true
 
 export default new Vuex.Store({
   state: {
@@ -33,7 +34,7 @@ export default new Vuex.Store({
     login: ({ commit }, user) => {
       return new Promise((resolve, reject) => {
         commit('login_request')
-        axios.post('login', user).then(resp => {
+        axios.post('login/submit', user).then(resp => {
           console.log('dados da requisição de login: ', resp)
           const token = resp.data.token
           const user = resp.data.user

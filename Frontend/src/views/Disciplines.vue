@@ -67,13 +67,13 @@ export default {
    /**
    * Função utilizada para obter as disciplinas no BD através do backend
   */
-  created:function(){
-    this.$http.get ("http://localhost:8090/subject/subjects").then(function (response){
-      this.disciplines=response.body;
-    }, function (response){
-        console.log("Nenhuma disciplina!")
-    })
-  },
+  // created:function(){
+  //   this.$http.get ("http://localhost:8090/subject/subjects").then(function (response){
+  //     this.disciplines=response.body;
+  //   }, function (response){
+  //       console.log("Nenhuma disciplina!")
+  //   })
+  // },
   computed: {
     /**
      *  Método que filtra as disciplinas pelo nome, com a informação

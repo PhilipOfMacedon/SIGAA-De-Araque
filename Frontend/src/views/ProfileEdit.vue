@@ -149,12 +149,12 @@ export default {
       // buscar o novo url da imagem
       this.uploadImage = event.target.files[0]
     },
-    uploadImage() {
+    uploadImageReq() {
       //enviar requisição  de form data com a nova imagem
       const fd = FormData();
       fd.append('image', this.selecetedFile, this.selecetedFile.name)
       // axios.post()
-      getUserImage()
+      this.getUserImage()
     }
   },
   computed: {

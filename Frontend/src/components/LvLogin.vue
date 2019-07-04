@@ -36,7 +36,7 @@
         </v-layout>
         <v-layout row>
           <v-flex text-xs-center xs12 md12>
-            <v-btn color="secondary"  :to='route'>Login</v-btn>
+            <v-btn color="secondary"  @click="login">Login</v-btn>
           </v-flex>
         </v-layout>
       </v-form>
@@ -68,13 +68,16 @@ export default {
     };
   },
   methods: {
-    submit() {
+    login() {
       if (this.$refs.loginForm.validate()) {
         let username = this.user.email;
         let password = this.user.password;
         this.$store
           .dispatch("login", { username, password })
-          .then(() => this.$router.push(this.route))
+          .then(() => {
+            this.$router.push(this.route)
+            console.log("Autenticou")
+          })
           .catch(err => console.log(err));
       }
     }

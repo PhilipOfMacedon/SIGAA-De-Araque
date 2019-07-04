@@ -111,13 +111,13 @@ export default {
     };
   },
 
-  created:function(){
-    this.$http.get ("http://localhost:8090/researcher/researchers").then(function (response){
-      this.researches=response.body;
-    }, function (response){
-        console.log("Nenhum pesquisador!")
-    })
-  },
+  // created:function(){
+  //   this.$http.get ("http://localhost:8090/researcher/researchers").then(function (response){
+  //     this.researches=response.body;
+  //   }, function (response){
+  //       console.log("Nenhum pesquisador!")
+  //   })
+  // },
 
   computed: {
     /**

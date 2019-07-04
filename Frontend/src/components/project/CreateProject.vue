@@ -52,13 +52,13 @@ export default {
 
   methods: {
     //Método para inserção do projeto
-    inserir: function(){
-      this.$http.post ("http://localhost:8090/project/addProject", this.project).then(function (response){
-        this.projects.push(response.body);
-      }, function (response){
-        console.log("Nenhum projeto!")
-      })
-    }
+    // inserir: function(){
+    //   this.$http.post ("http://localhost:8090/project/addProject", this.project).then(function (response){
+    //     this.projects.push(response.body);
+    //   }, function (response){
+    //     console.log("Nenhum projeto!")
+    //   })
+    // }
   }
 };
 </script>

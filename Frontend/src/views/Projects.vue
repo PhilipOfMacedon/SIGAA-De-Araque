@@ -68,14 +68,13 @@ export default {
   /**
    * Função utilizada para obter os projetos no BD através do backend
   */
-  mounted: { 
-      this.$http.get("http://192.168.1.101:8090/project/projects").then(response => { 
-        this.projects = response.body
-      }).catch(error => {
-        console.log("Aconteceu um erro")
-        console.log(error)
-      })
-  },
+  // mounted: { 
+  //     this.$http.get("http://192.168.1.101:8090/project/projects").then(response => { 
+  //       this.projects = response.body;
+  //     } response => {
+  //       console.log("Aconteceu um erro")
+  //     });
+  // },
 
   computed: {
     /**
