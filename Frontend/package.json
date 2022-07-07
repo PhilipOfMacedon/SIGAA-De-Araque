@@ -18,7 +18,7 @@
     "i": "^0.3.6",
     "jquery": "^3.4.1",
     "material-design-icons-iconfont": "^3.0.3",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "npm": "^6.9.0",
     "roboto-fontface": "*",
     "vue": "^2.6.10",
